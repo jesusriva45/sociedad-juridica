@@ -1,0 +1,30 @@
+@font-face {
+    font-family: assistant-bold;
+    src: url(../font/assistant/Assistant-Bold.otf);
+}
+
+@font-face {
+    font-family: assistant-semi-bold;
+    src: url(../font/assistant/Assistant-SemiBold.otf);
+}
+
+@font-face {
+    font-family: assistant-regular;
+    src: url(../font/assistant/Assistant-Regular.otf);
+}
+
+#password,
+#username {
+    font-family: assistant-semi-bold;
+}
+
+#ini-sesion {
+    font-family: assistant-regular;
+}
+
+
+/****************** INICIO *******************************/
+
+figure>h3 {
+    font-family: assistant-semi-bold;
+}

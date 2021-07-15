@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding:0;
+    border: 0;
+}
+body{
+    overflow-x: hidden;
+    
+}
+/*imagen de fondo para el header*/
+header{
+    width: 100%;
+    height: 500px;
+    background:url(../Imagenes/bannerEventos.jpg);
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/ 
+    background-size: 100% 100%;
+}
+/*estilo para que el row ocupe todo el ancho de la pantalla*/
+.row{
+    width: 100%;
+    height: auto;
+}
+
+
+/*estilos para el logo de la empresa*/
+.logoNav{
+    position: relative;
+    width: 280px;
+    height: 80px;
+    margin: 20px 30px ;
+    top:25px;
+    left: 55px;
+    padding: 5px;
+}
+/*Estilos para el buscador */
+#buscar{
+    width: 80%;
+    height: 35px;
+    display:block;
+    border: white 2px solid;
+    border-radius: 10px;
+    margin:30px auto;
+    background-color: #FFFFFF;
+    
+}
+/*estilos para que no aparescan los bordes en el buscador*/
+.outlinenone {
+    outline: none;
+    border: 0;
+    color: black;
+    margin-left: 10px;
+}
+/*color de texto al escribir en el buscador*/
+::placeholder{
+    color: #000000;
+    position: relative;
+    padding-left: 15px;
+}
+/*estilos de la barra de navegación*/
+    /*estilos para que las opciones estén de color blanco*/
+.nav-link{
+    color: #FFFFFF !important;
+    margin: 0px 10px;
+}
+
+.dropdown-menu{
+    width: 540px;
+    height: 100px;
+    position: relative;
+    left: -200px;
+    top: 60px;
+    padding: 0;
+}
+.dropdown-menu>li{
+    float: left;
+}
+   
+.dropdown-item{
+   margin-left: 5px;
+   height: 98px;
+   padding-top: 40px;
+}
+.dropdown-item:hover{
+    background-color: #EBEBEB;
+}
+
+.navopciones{
+    width: 850px;
+    height: 100px;
+    position: relative;
+    left: -500px;
+    top: 60px;
+    padding: 0;
+}
+.navopciones2{
+    width: 600px;
+    height: 100px;
+    position: relative;
+    left: -300px;
+    top: 60px;
+    padding: 0;
+}
+
+
+.col-md-10{
+    margin-left: 80px;
+}
+
+li > a:hover{
+    text-decoration: underline;
+}
+.responsive{
+    position: relative;
+    margin: 40px 45%;
+}
+.bi-list{
+    color: white;
+}
+.bi-search{
+    color: #000000;
+}
+.bi-search:hover{
+    color: #11C5D9;
+}
+.padreNosotros{
+    position: relative;
+    top: 50px;
+    width: 100%;
+    height: 200px;
+}
+.NavNosotros{
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    font-size: 60px;
+    color: #024059;
+    margin: auto;
+    padding: 40px 0px 40px 0px;
+    background-color: #FFFFFF;
+    opacity: .80;
+    border-radius: 10px;
+
+}
+.linea{
+    color: #000000;
+    width: 100%;
+    height: 3px !important;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.979)
+}
+
+
+.secProximos{
+    width: 85%;
+    height: auto;
+    margin: auto;
+}
+.divfecha{
+    display: table;
+}
+.h1fecha{
+    display: table-cell;
+    vertical-align: middle;
+    height: 320px;
+}
+
+.imgProx{
+    display: block;
+    width: 80%;
+    height: 320px;
+    padding: 10px;
+    margin: auto;
+}
+.spanInfo{
+    margin: 0px 40px 0px 0px;
+
+}
+.spanCont{
+width: 100%;
+margin-top: 40px;
+margin-bottom: 40px;
+}
+.Pdescripcion{
+    width: 80%;
+}
+
+.btnComprar{
+    width: 200px;
+    background-color: #c6c7c8;
+    border-color: none;
+    color: #FFFFFF;
+    margin-top: 30px;
+    position: sticky;
+}
+.btnComprar:hover{
+    background-color: #024059;
+    color: #FFFFFF;
+    
+}
+.separador{
+    width: 90%;
+    height: 2px !important;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.next a{
+    text-decoration: none;
+}
+.siguiente{
+    font-size: 18px;
+    width: 200px;
+    border-radius: 80px;
+    display: block;
+    margin: 0px auto;
+    background-color: #024059;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+}
+.siguiente:hover{
+    background-color: #e75353;
+    color: #FFFFFF;
+}
+/*estilos para el footer*/
+footer{
+    
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    background-color: #f9f9f9;
+    
+}
+.contenidoFooter{
+    width: 100%;
+    height: auto;
+    padding-top: 17px;
+}
+.logofooter{
+    width: 230px;
+    height: auto;
+    padding-bottom: 15px;
+}
+/*svg iconos*/
+.divcontRed{
+    padding-left: 50px;
+}
+.divsvg{
+    margin: 5px 10px 10px 10px;
+}
+.asvg{
+    margin-right: 15px;
+    border-radius: 100%;
+    background-color: #EBEBEB;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+
+}

@@ -1,0 +1,16 @@
+@font-face{
+    font-family: HelveticaNeuneNav;
+    src: url(../Tipografias/helvetica/Helvetica\ Neue\ LT\ 55\ Roman.ttf);
+}
+
+
+
+/*Pag principal*/
+    /*nav*/
+.nav-link{
+    font-family: HelveticaNeuneNav;
+    font-size: 1em;
+}
+
+
+
