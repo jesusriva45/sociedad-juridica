@@ -529,7 +529,9 @@ $("#id_registrar").click(function(e){
         }
       });
       
-  }	
+      return false;
+	};
+	return false;	
 });
 
 
@@ -583,7 +585,9 @@ $("#id_actualizar").click(function(e){
         }
       });
       
-  }	
+      return false;
+	};
+	return false;	
 });
 
 //validaciones para el registrar

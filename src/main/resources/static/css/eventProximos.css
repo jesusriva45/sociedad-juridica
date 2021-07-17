@@ -23,6 +23,22 @@ header{
 }
 
 
+.btnLeer{
+    width: 150px;
+    padding:5px;
+    background-color: #c6c7c8;
+    border-color: none;
+    color: #FFFFFF;
+    margin-top: 30px;
+    position: sticky;
+    border-radius: 5px;
+}
+.btnLeer:hover{
+    background-color: #024059;
+    color: #FFFFFF;
+    
+}
+
 /*estilos para el logo de la empresa*/
 .logoNav{
     position: relative;

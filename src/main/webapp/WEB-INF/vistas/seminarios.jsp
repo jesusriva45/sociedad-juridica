@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/seminarios.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
@@ -31,20 +34,9 @@
     <hr class="linea">
     <br>
     
-    <section class="secSeminarios">
-        <div class="seminarios">
-            <!-- div class="cardNuevo">
-                <div>
-                    <h4 class="DerPenal w-100">Derecho Penal</h4>
-                    <img class="imgNew" onmouseout="this.src='Imagenes/pexels-pixabay-48148.jpg';"
-                    onmouseover="this.src='Imagenes/pexels-andrea-piacquadio-3771097.jpg';" src="Imagenes/pexels-pixabay-48148.jpg">
-                    <a href="#" class="nuevoLink">Dos caras, una moneda: Curso Interdisciplinario de Derecho Civil y Penal.</a>
-                    <p class="m-lg-1">20/12/20 - 19:00 hrs</p>
-                </div>
-            </div-->
-           
-           
-        </div>
+    <section id="panel-card-serminarios" class="secSeminarios">
+      
+         <!-- CONTENIDO CON JQUERY -->
     </section>
 
     <!-- div class="next">
@@ -118,5 +110,73 @@
 
     <script src="js/scriptlogo.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+    
+    <script>
+    
+    $.getJSON("listaEventos", function (data){
+		listarSeminarios(data);
+
+});
+    
+    
+	function listarSeminarios(data){
+		
+		let ordenFecha = [];
+		
+		 $.each(data, function(index,item){
+	
+ 		// if(item.cargo.descripcion == "Marketing & financiamiento" || item.cargo.descripcion == "Vicepresidente")
+			 if(item.tipoEventos.descripcion == "seminarios"){				 
+				 ordenFecha.push(item);				 
+				 ordenFecha.sort( (a, b) => (a.fecha_pub > b.fecha_pub) ? 1 : -1)				
+				  console.log(ordenFecha);				
+			 }  		  
+		}); 
+    
+    
+    
+    /*
+        <div class="seminarios">
+            <div class="cardNuevo">
+                <div>
+                    <h4 class="DerPenal w-100">Derecho Penal</h4>
+                    <img class="imgNew" onmouseout="this.src='Imagenes/pexels-pixabay-48148.jpg';"
+                    onmouseover="this.src='Imagenes/pexels-andrea-piacquadio-3771097.jpg';" src="Imagenes/pexels-pixabay-48148.jpg">
+                    <a href="#" class="nuevoLink">Dos caras, una moneda: Curso Interdisciplinario de Derecho Civil y Penal.</a>
+                    <p class="m-lg-1">20/12/20 - 19:00 hrs</p>
+                </div>
+            </div>         
+        </div>*/
+        
+			$.each(ordenFecha, function(i,item){
+				console.log(item.fecha_pub);
+				let fecha = item.fecha_pub;
+				let date  = new Date(fecha);
+				let dia = date.getDate();
+				
+				let month = date.toLocaleString('es-es', { month: 'short' });
+				
+						  $('#panel-card-serminarios').append("<div class='seminarios'>"+
+						            "<div class='cardNuevo'>"+
+			                "<div>"+
+			                    "<h4 class='DerPenal w-100'>"+item.nombre+"</h4>"+
+			                    "<img class='imgNew' onmouseout='this.src='Imagenes/pexels-pixabay-48148.jpg';"+
+			                    "onmouseover='this.src="+item.imagen+";' src="+item.imagen+">"+
+			                    "<a href="+item.url+" class='nuevoLink'>"+item.descripcion+"</a>"+
+			                    "<p class='m-lg-1'><label>"+item.fecha_pub+"</label> - <label>"+item.horario.hora+"</label> hrs</p>"+
+			                "</div>"+
+			            "</div>"+         
+			        "</div>");	
+				
+				
+		})
+	}
+    
+    </script>
+    
+    
+    
+    
 </body>
 </html>

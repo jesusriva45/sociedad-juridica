@@ -72,47 +72,52 @@ body{
 
 /*Zona de practica para las opciones del menu*/
 
-.dropdown-menu{
-    width: 540px;
-    height: 100px;
-    position: relative;
-
-    top: 60px;
-    padding: 0;
-}
 .dropdown-menu>li{
     float: right;
-    padding:0px;
-	margin:0px;
+    padding:auto;
+	margin:auto;
 }
    
 .dropdown-item{
 	
 	width:auto;
    height: 98px;
-   padding-top: 40px;
+   padding-top: 36px;
 }
+
+.dropdown-menu>li>a{
+	margin:auto;
+}
+
 .dropdown-item:hover{
     background-color: #EBEBEB;
 }
 
-.navopciones{
-    width: 828.2px;
+.opc-nuevo{
+    width: 518.25px;
     height: 100px;
-   
     position: relative;
     top: 60px;
     padding: 0;
 }
 
+.opc-nosotros{
+    width: 803.25px;
+    height: 100px;   
+    position: relative;
+    top: 60px;
+    margin:0;
+    padding: 0;
+}
 
-.navopciones2{
-    width: 600px;
+
+.opc-eventos{
+    width: 566.5px;
     height: 100px;
     position: relative;
-    left: -500px;
     top: 60px;
     padding: 0;
+    margin:0;
 }
 
 #carouselExampleIndicators{

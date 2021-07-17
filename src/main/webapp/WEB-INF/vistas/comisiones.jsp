@@ -6,6 +6,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/comisiones.css">
 <link rel="stylesheet"
@@ -40,23 +43,8 @@
 				<h2 class="H2socJur">Sociedad Jurídica</h2>
 			</div>
 			<br>
-			<div class="contenedorTarjetas">
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Kimberly Victoria Lezama Perez</p>
-						<p class="cargo">PRESIDENTE</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">VICEPRESIDENTE</p>
-					</div>
-				</div>
+			<div id="presi-and-vice" class="contenedorTarjetas">
+				<!-- CONTENIDO CON JQUERY -->
 			</div>
 		</section>
 		<br>
@@ -66,47 +54,8 @@
 				<h2 class="H2socJur">Área de Marketing & Financiamiento</h2>
 			</div>
 			<br>
-			<div class="contenedorTarjetas">
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Maryori Sthefanny Alayo Torres</p>
-						<p class="cargo">DIRECTOR</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
+			<div id="usuarios-marketing" class="contenedorTarjetas">
+				<!-- CONTENIDO CON JQUERY -->
 			</div>
 		</section>
 		<br>
@@ -116,47 +65,8 @@
 				<h2 class="H2socJur">Área de Publicaciones</h2>
 			</div>
 			<br>
-			<div class="contenedorTarjetas">
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Maryori Sthefanny Alayo Torres</p>
-						<p class="cargo">DIRECTOR</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
+			<div id="usuarios-publicaciones" class="contenedorTarjetas">
+				
 			</div>
 		</section>
 		<br>
@@ -166,47 +76,8 @@
 				<h2 class="H2socJur">Área de Cursos & Seminarios</h2>
 			</div>
 			<br>
-			<div class="contenedorTarjetas">
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Maryori Sthefanny Alayo Torres</p>
-						<p class="cargo">DIRECTOR</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
-				<div class="cardSJ">
-					<div>
-						<img class="imgSJ"
-							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
-						<p class="nombre">Lady Carol Castellanos Coca</p>
-						<p class="cargo">ASOCIADO</p>
-					</div>
-				</div>
+			<div id="usuarios-cursos-seminarios" class="contenedorTarjetas">
+				
 			</div>
 		</section>
 		<br>
@@ -296,6 +167,153 @@
 
 	<script src="js/scriptlogo.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	
+	
+	
+	<script>
+	
+	/*<div class="cardSJ">
+					<div>
+						<img class="imgSJ"
+							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
+						<p class="nombre">Kimberly Victoria Lezama Perez</p>
+						<p class="cargo">PRESIDENTE</p>
+					</div>
+				</div>
+				<div class="cardSJ">
+					<div>
+						<img class="imgSJ"
+							src="Imagenes/pexels-august-de-richelieu-4427622.jpg" alt="">
+						<p class="nombre">Lady Carol Castellanos Coca</p>
+						<p class="cargo">VICEPRESIDENTE</p>
+					</div>
+				</div>*/
+				
+				
+				
+				
+				
+
+	$.getJSON("listaUsuario", function (data){
+			listarPresidenteAndVicePresidente(data);
+			listarAreaMarketing(data);
+			listarAreaPublicaciones(data);
+			listarAreaCursosSeminarios(data);
+	});
+						
+				
+	function listarPresidenteAndVicePresidente(data){
+					
+					 $.each(data, function(index,item){
+			    		
+						 if(item.cargo.descripcion == "Presidente" || item.cargo.descripcion == "Vicepresidente"){
+							 console.log(item.cargo.descripcion)
+							  $("#presi-and-vice").append("<div class='cardSJ'>"+
+						    			"<div>"+
+						  					"<img class='imgSJ' src="+item.foto+" alt=''>"+
+											"<p class='nombre'>"+item.nombre + ' ' + item.apellPaterno + ' ' + item.apellMaterno+"</p>"+
+											"<p class='cargo'>"+item.cargo.descripcion+"</p>"+
+										"</div>"+
+									"</div>");	
+						 }
+			    		
+			    		  
+					}); 
+					
+	}			
+	
+	
+	function listarAreaMarketing(data){
+		
+		 $.each(data, function(index,item){
+   		// if(item.cargo.descripcion == "Marketing & financiamiento" || item.cargo.descripcion == "Vicepresidente")
+			 if(item.area.nombre == "Marketing & financiamiento"){
+				 console.log(item.area.nombre)
+				 if(item.cargo.descripcion == "Director" || item.cargo.descripcion == "Asociados"){
+					 {
+						  $("#usuarios-marketing").append("<div class='cardSJ'>"+
+					    			"<div>"+
+					  					"<img class='imgSJ' src="+item.foto+" alt=''>"+
+										"<p class='nombre'>"+item.nombre + ' ' + item.apellPaterno + ' ' + item.apellMaterno+"</p>"+
+										"<p class='cargo'>"+item.cargo.descripcion+"</p>"+
+									"</div>"+
+								"</div>");	
+					 }
+				 }
+			 }  		  
+		}); 		
+	}	
+	
+	
+	function listarAreaPublicaciones(data){
+		
+		let ordenCargo = [];
+		
+		 $.each(data, function(index,item){
+  		// if(item.cargo.descripcion == "Marketing & financiamiento" || item.cargo.descripcion == "Vicepresidente")
+			 if(item.area.nombre == "Publicaciones"){
+				 ordenCargo.push(item);				 
+					ordenCargo.sort( (a, b) => (a.cargo.descripcion > b.cargo.descripcion) ? 1 : -1)				
+					  console.log(ordenCargo);	
+			 }  		  
+		}); 
+		 
+		 
+		 ordenCargo.sort().reverse();
+		 $.each(ordenCargo, function(i,user){
+				
+				if(user.cargo.descripcion == "Director" || user.cargo.descripcion == "Asociados"){
+					 {
+						  $("#usuarios-publicaciones").append("<div class='cardSJ'>"+
+					    			"<div>"+
+					  					"<img class='imgSJ' src="+user.foto+" alt=''>"+
+										"<p class='nombre'>"+user.nombre + ' ' + user.apellPaterno + ' ' + user.apellMaterno+"</p>"+
+										"<p class='cargo'>"+user.cargo.descripcion+"</p>"+
+									"</div>"+
+								"</div>");	
+					 }
+				 }
+				
+		})
+	}
+	
+	
+	
+	function listarAreaCursosSeminarios(data){
+		
+		let ordenCargo = [];
+		
+		 $.each(data, function(index,item){
+	
+ 		// if(item.cargo.descripcion == "Marketing & financiamiento" || item.cargo.descripcion == "Vicepresidente")
+			 if(item.area.nombre == "Cursos & seminarios"){				 
+				 ordenCargo.push(item);				 
+				ordenCargo.sort( (a, b) => (a.cargo.descripcion > b.cargo.descripcion) ? 1 : -1)				
+				  console.log(ordenCargo);				
+			 }  		  
+		}); 
+		 
+		 ordenCargo.sort().reverse();
+		$.each(ordenCargo, function(i,user){
+				
+				if(user.cargo.descripcion == "Director" || user.cargo.descripcion == "Asociados"){
+					 {
+						  $("#usuarios-cursos-seminarios").append("<div class='cardSJ'>"+
+					    			"<div>"+
+					  					"<img class='imgSJ' src="+user.foto+" alt=''>"+
+										"<p class='nombre'>"+user.nombre + ' ' + user.apellPaterno + ' ' + user.apellMaterno+"</p>"+
+										"<p class='cargo'>"+user.cargo.descripcion+"</p>"+
+									"</div>"+
+								"</div>");	
+					 }
+				 }
+				
+		})
+	}
+	</script>
+	
+	
+	
 </body>
 
 </html>

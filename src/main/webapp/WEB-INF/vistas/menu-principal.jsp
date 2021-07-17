@@ -61,11 +61,11 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Lo Nuevo
                       </a>
-                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="verUltimasNoticias">Últimas Noticias</a></li>
-                        <li><a class="dropdown-item" href="verNoticiasNacionales">Noticias Nacionales</a></li>
-                        <li><a class="dropdown-item" href="verNoticiasInternacionales">Noticias Internacionales</a>
-                        </li>
+                      <ul class="opc-nuevo dropdown-menu dropdown-menu-end"  aria-labelledby="navbarDropdown">
+                       <li><a class="dropdown-item" href="verNoticiasInternacionales">Noticias Internacionales</a> </li>
+                        <li><a class="dropdown-item" href="verNoticiasNacionales">Noticias Nacionales</a></li>                        
+                         <li><a class="dropdown-item" href="verUltimasNoticias">Últimas Noticias</a></li>
+                       
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -73,7 +73,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Nosotros
                       </a>
-                      <ul class="navopciones dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+                      <ul  class="opc-nosotros dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="verQuienesSomos">¿Quiénes Somos?</a></li>
                         <li><a class="dropdown-item" href="verComisiones">Comisiones</a></li>
                         <li><a class="dropdown-item" href="verConsejoConsultivo">Consejo Consultivo</a></li>
@@ -87,12 +87,12 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Eventos
                       </a>
-                      <ul class="navopciones2 dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"><!---->
-                        <li><a class="dropdown-item" href="verEventosProximos">Eventos Próximos</a></li>
-                        <li><a class="dropdown-item" href="verEventosPasados">Eventos Pasados</a></li>
-                        <li><a class="dropdown-item" href="verSeminarios">Seminarios</a></li>
-                        <li><a class="dropdown-item" href="verCursos">Cursos</a></li>
-                        <li><a class="dropdown-item" href="verOtros">Otros</a></li>
+                      <ul  class="opc-eventos dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown"><!---->
+                       <li><a class="dropdown-item" href="verOtros">Otros</a></li>
+                       <li><a class="dropdown-item" href="verCursos">Cursos</a></li>
+                       <li><a class="dropdown-item" href="verSeminarios">Seminarios</a></li>
+                       <li><a class="dropdown-item" href="verEventosPasados">Eventos Pasados</a></li>
+                       <li><a class="dropdown-item" href="verEventosProximos">Eventos Próximos</a></li>                      
                       </ul>
                     </li>
                     <li class="nav-item">

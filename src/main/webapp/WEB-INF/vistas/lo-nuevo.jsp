@@ -295,8 +295,10 @@ $("#id_registrar_noticia").click(function (e){
 					}
 				});
 		 
-		  //return false;
+		 
+		 return true;
 	};
+	return false;
 });	
 
 
@@ -349,8 +351,10 @@ $("#id_registrar_pag_principal").click(function (e){
 						}
 					});
 			 
-			  //return false;
+			 
+			  return false;
 		};
+		return false;
 	});	
 
 

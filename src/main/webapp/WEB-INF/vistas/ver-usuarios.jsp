@@ -378,15 +378,12 @@ $("#id_registrar").click(function (e){
 	var validator = $('#form-edit').data('bootstrapValidator');
 	validator.validate();
 
-	if (validator.isValid()){
+	if (validator.isValid()){	
 		
 		  var formData=new FormData();		  
-		  
 		  let foto = document.getElementById('foto_usuario');	            
-	      var file =  foto.getAttribute("src");			  
-		
-		  formData.append("foto", file);
-		  
+	      var file =  foto.getAttribute("src");	
+		  formData.append("foto", file);		  
 		  formData.append("id_usuario", $("#idUsuario").val());
 		  formData.append("nombre", $("#idNombre").val());
 		  formData.append("apellidoPat", $("#idApePat").val());
@@ -401,16 +398,15 @@ $("#id_registrar").click(function (e){
 		  formData.append("cargo", $("#idCargo").val());
 		  formData.append("area", $("#idArea").val());
 		  formData.append("ubigeo", $("#idDistrito").val());
-	  
-		 
-			
+		  
+		  console.log($("#idApeMat").val());
 		  
 		  		$.ajax({
 					type: 'POST',  					
 					data: formData,					
 			        contentType: false,
 			        processData: false,
-			        async: true,
+			        async: false,
 					url: 'insertaActualizaUsuario',
 					success: function(data){			
 						$('#panel-reg-edit').css('display','none');
@@ -426,8 +422,9 @@ $("#id_registrar").click(function (e){
 					}
 				});
 		 
-		  //return false;
+		 return false;
 	};
+	return false;
 });	
 
 
@@ -678,6 +675,15 @@ $("#id_btn_filtrar").click(function(){
 				validating: 'glyphicon glyphicon-refresh'
 			},
 			fields: {
+				idUsuario: {
+					selector: '#idUsuario',
+					validators: {
+						notEmpty: {
+							message: '* Este campo es obligatorio'
+						}
+						
+					}
+				},
 				nombre: {
 					selector: '#idNombre',
 					validators: {

@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+ 	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/eventProximos.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
@@ -32,252 +35,16 @@
     <hr class="linea">
     <br>
 
-    <section class="secProximos">
-      <div class="row">
-          
-          <div class="col-md-1 divfecha">
-              <h1 class="date text-center h1fecha">
-                  01 DIC
-              </h1>
-          </div>
-          <div class="col-md-4">
-            <img class="imgProx" src="Imagenes/jakob-dalbjorn-730178-unsplash-min.jpg" alt="">
-          </div>
-          <div class="col-md-7">
-              <h3>
-                CURSO DE ACTUALIZACION: DERECHO BANCARIO Y FINANCIERO
-              </h3>
-              <div class="spanCont">
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="189" y="64" width="702" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAACmklEQVRIiY2VX2jOYRTHP+f138VSJLvQlkzJnyx/2pbGBantFrG/+R+1XEhxtxuRGxG5mNSadkPSbswFyooVKRkpF3KDpZYVjcJXZ86rn1/P+/aeent+73nO+Z7vOc95zmMtLS2UkC7gBLA2t/0auABcB37nXWcmsNrN7IZ/SBLwGHjlf4GVQJOZ9QF9kg4B18oB9puZMxuX1A3cS5GX1GxmAw4saQewq7hXyNgNBNhlSUtKgYU8klQDnDOzncDt4saMuro6X4+Z2WngoqTjZYDyct/MZpnZYeCbl8cPpcrMJoF3wLJMWmWRzCz794UfnqTFBTPrDuXJBNjsKLri1w/MSwQ8FUH2+6HsDeWdBJFRM6sHnkaLdElaD6zO2d2NdY8fSgMwBvwqRvZ0zKwnwA4Cm8Ku08xWeTZuk2P5DFjngF6MT4naNMQ6lHEaCpvGRB2nMYptszBRv7FYmzJOxe+XiTpOY1hra+tzoD6YZkHnAG/NbCkwGCXplDQOLAe+5hj+dHtneDMU23OF/uE1kTQiqU2Sg40CaxwsZ9vsPe1YzrAa+BBF3ZhI3WVuZDBVVOTYjQCbgdqCpI9AL7AB2Feiob9nwXJB2wLsrKT3/8aXmTnLakkLgMkUakLmm5lfuQlJ04dSyETrCOArFYK57aXwbS/qstPmAeBz0De3VoDnLXQAuAUMpwA9Uk9EHqyA3WD4HMnqCzm7L94eXksz6y0D5sOgRpLPz4n/9lJvipk99LQlrfBmzW3XmpmPulFJjXnfPEMijaMB3JcI1hc2XSnfJCDwBjgDbAE6MvrdwDbgfIL534BlnlFn8xlYlLnnfl+nJFXFwK2Y4bTEAbn4gH3i9zV6ruT7kHqXszIc9bwaSn/AsvPxfwH+AG29+bK+N9VkAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  Lima, Lima
-                </span>
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="64" y="64" width="952" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADt0lEQVRIiZWWa4iVVRSGn/c4pRghoZklpVKD2UxB91LDX0JORGWKkiYkkhH96cYEGf3o4hSjGJIKkgSZWkkFlaVFkDLdIAoLC+1HWlSm3cakGdRWrNP7yefX8Ywu+Nj7rL3OWnu967bV0dHBADQJWABcD4yqiO4FNgPPAVubqWlpcpaKVwDjJOXvD4B1wHdAAGOBy4F5ETEP+B64C9h0MoZeBG6TtAu4EXiz2W0lTQOWRMRbwMvArIEM5e8vgQsl3QE8XzqbYS9lj2qG7SXg7fwkzY2IF4DLgIuBvqOXqcToG0njgYuAr81bDDwUkbr5BRhpfn1vWLuBB82/ANgVEXuAMYXiWsnIehuZYCOjgc9spAs4BzgLWAts9H5URDwBPABsB84DvgXOl5T716seTZTUAxRwDQf2W2ZERPzaLEbAMEl/eJ8X+iljnLGOiKnAe7V0XdKrTtUiJh9lHCLiADDE8DSj4RHRG//h+4nlMkN3S9qY/0/o2g3D7RZ4DGiNiJEO6rnAQMWW3lwJnGn5bvPnpLfAVTXjm/Su10XAckn7JSXeg4FM264GBk7x+huwU1JC/BRwv/kZjn+AzjR0M/CpD4qbd5aUZaE+LKmzYmw50C9psOEv+Iu8zvC6Dbihxa71mDkb+BP4u3LzJ4EjkroiojVvKSkVPQscqsgediLNdnZ+CEwp0nuP1yywIS7EUysKEpKPJU23kc+BewxNQS3uIqcBB8q6axVlRdX3lZmZTP62NtpXqM86yjqPtqCigtOLfuCm6r9Nnb7tIODeBueHHZt9lsNFXDfUC0w2M5tpduLT0/UGt8VwHUOFnBMis3SE6wiPmb6a28QVZm7x2l1VdhK02KJF+7ku45aGlpgxzesjwJ0Rka2krdREm1F60B4RZxvSwtgUr0/Xe52kvQ5aofSriGhzYC/JbjyAoYzxDmCoi7zV/B8cqzPqWRcR090+Flogm2zWTab6XxWlKjKpRAclDXWMrjE7G/ToiLg1Y1ikd09EbABWeWD1+n2QdfMj8EyOdMtuKOGfniyVtM8jJaHLNpTjZk1EvAa8T4PBt0NSzqNLgS/My5byaERkhv6eMJhf30vKgn08ZcxvM/RlCP9naJANtEu6G1hZOuvwKK+5IBOndyrviQURsTobrGPbfzxDBeUUnSMpXzb3uWc1o2zMSyMi4U3ZmVXZ472C5uajIyKWAa84yDnQsr/ttkdZ8QnxtS7Y7Gm3lMf3iRhKesPfxIiY7zq7uiLzs6fyGo+DxgT8C8nuOSg/S7IhAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  17:00 hrs                
-                </span>
-              </div>
-              <p class="Pdescripcion">
-                ¿Qué nuevo rol han tomado las cooperativas a partir de su regulación por la SBS?, ¿Qué es el FINTECH y como ha revolucionado el sistema?
-              </p>
-              <div> 
-                <a href="#"><button type="button" class="btn btnComprar">Comprar Entrada</button></a> 
-              </div>
-          </div>
+   
 
-      </div>
-    </section>
-    <hr class="separador">
+  
+<div id="eventos-proximos" class="m-0 p-0 w-100">
 
-    <section class="secProximos">
-      <div class="row">
-          
-          <div class="col-md-1 divfecha">
-              <h1 class="date text-center h1fecha">
-                  01 DIC
-              </h1>
-          </div>
-          <div class="col-md-4">
-            <img class="imgProx" src="Imagenes/jakob-dalbjorn-730178-unsplash-min.jpg" alt="">
-          </div>
-          <div class="col-md-7">
-              <h3>
-                CURSO DE ACTUALIZACION: DERECHO BANCARIO Y FINANCIERO
-              </h3>
-              <div class="spanCont">
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="189" y="64" width="702" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAACmklEQVRIiY2VX2jOYRTHP+f138VSJLvQlkzJnyx/2pbGBantFrG/+R+1XEhxtxuRGxG5mNSadkPSbswFyooVKRkpF3KDpZYVjcJXZ86rn1/P+/aeent+73nO+Z7vOc95zmMtLS2UkC7gBLA2t/0auABcB37nXWcmsNrN7IZ/SBLwGHjlf4GVQJOZ9QF9kg4B18oB9puZMxuX1A3cS5GX1GxmAw4saQewq7hXyNgNBNhlSUtKgYU8klQDnDOzncDt4saMuro6X4+Z2WngoqTjZYDyct/MZpnZYeCbl8cPpcrMJoF3wLJMWmWRzCz794UfnqTFBTPrDuXJBNjsKLri1w/MSwQ8FUH2+6HsDeWdBJFRM6sHnkaLdElaD6zO2d2NdY8fSgMwBvwqRvZ0zKwnwA4Cm8Ku08xWeTZuk2P5DFjngF6MT4naNMQ6lHEaCpvGRB2nMYptszBRv7FYmzJOxe+XiTpOY1hra+tzoD6YZkHnAG/NbCkwGCXplDQOLAe+5hj+dHtneDMU23OF/uE1kTQiqU2Sg40CaxwsZ9vsPe1YzrAa+BBF3ZhI3WVuZDBVVOTYjQCbgdqCpI9AL7AB2Feiob9nwXJB2wLsrKT3/8aXmTnLakkLgMkUakLmm5lfuQlJ04dSyETrCOArFYK57aXwbS/qstPmAeBz0De3VoDnLXQAuAUMpwA9Uk9EHqyA3WD4HMnqCzm7L94eXksz6y0D5sOgRpLPz4n/9lJvipk99LQlrfBmzW3XmpmPulFJjXnfPEMijaMB3JcI1hc2XSnfJCDwBjgDbAE6MvrdwDbgfIL534BlnlFn8xlYlLnnfl+nJFXFwK2Y4bTEAbn4gH3i9zV6ruT7kHqXszIc9bwaSn/AsvPxfwH+AG29+bK+N9VkAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  Lima, Lima
-                </span>
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="64" y="64" width="952" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADt0lEQVRIiZWWa4iVVRSGn/c4pRghoZklpVKD2UxB91LDX0JORGWKkiYkkhH96cYEGf3o4hSjGJIKkgSZWkkFlaVFkDLdIAoLC+1HWlSm3cakGdRWrNP7yefX8Ywu+Nj7rL3OWnu967bV0dHBADQJWABcD4yqiO4FNgPPAVubqWlpcpaKVwDjJOXvD4B1wHdAAGOBy4F5ETEP+B64C9h0MoZeBG6TtAu4EXiz2W0lTQOWRMRbwMvArIEM5e8vgQsl3QE8XzqbYS9lj2qG7SXg7fwkzY2IF4DLgIuBvqOXqcToG0njgYuAr81bDDwUkbr5BRhpfn1vWLuBB82/ANgVEXuAMYXiWsnIehuZYCOjgc9spAs4BzgLWAts9H5URDwBPABsB84DvgXOl5T716seTZTUAxRwDQf2W2ZERPzaLEbAMEl/eJ8X+iljnLGOiKnAe7V0XdKrTtUiJh9lHCLiADDE8DSj4RHRG//h+4nlMkN3S9qY/0/o2g3D7RZ4DGiNiJEO6rnAQMWW3lwJnGn5bvPnpLfAVTXjm/Su10XAckn7JSXeg4FM264GBk7x+huwU1JC/BRwv/kZjn+AzjR0M/CpD4qbd5aUZaE+LKmzYmw50C9psOEv+Iu8zvC6Dbihxa71mDkb+BP4u3LzJ4EjkroiojVvKSkVPQscqsgediLNdnZ+CEwp0nuP1yywIS7EUysKEpKPJU23kc+BewxNQS3uIqcBB8q6axVlRdX3lZmZTP62NtpXqM86yjqPtqCigtOLfuCm6r9Nnb7tIODeBueHHZt9lsNFXDfUC0w2M5tpduLT0/UGt8VwHUOFnBMis3SE6wiPmb6a28QVZm7x2l1VdhK02KJF+7ku45aGlpgxzesjwJ0Rka2krdREm1F60B4RZxvSwtgUr0/Xe52kvQ5aofSriGhzYC/JbjyAoYzxDmCoi7zV/B8cqzPqWRcR090+Flogm2zWTab6XxWlKjKpRAclDXWMrjE7G/ToiLg1Y1ikd09EbABWeWD1+n2QdfMj8EyOdMtuKOGfniyVtM8jJaHLNpTjZk1EvAa8T4PBt0NSzqNLgS/My5byaERkhv6eMJhf30vKgn08ZcxvM/RlCP9naJANtEu6G1hZOuvwKK+5IBOndyrviQURsTobrGPbfzxDBeUUnSMpXzb3uWc1o2zMSyMi4U3ZmVXZ472C5uajIyKWAa84yDnQsr/ttkdZ8QnxtS7Y7Gm3lMf3iRhKesPfxIiY7zq7uiLzs6fyGo+DxgT8C8nuOSg/S7IhAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  17:00 hrs                
-                </span>
-              </div>
-              <p class="Pdescripcion">
-                ¿Qué nuevo rol han tomado las cooperativas a partir de su regulación por la SBS?, ¿Qué es el FINTECH y como ha revolucionado el sistema?
-              </p>
-              <div> 
-                <a href="#"><button type="button" class="btn btnComprar">Comprar Entrada</button></a> 
-              </div>
-          </div>
+ <!-- CONTENIDO CON JQUERY -->
 
-      </div>
-    </section>
-    <hr class="separador">
+</div>
 
-    <section class="secProximos">
-      <div class="row">
-          
-          <div class="col-md-1 divfecha">
-              <h1 class="date text-center h1fecha">
-                  01 DIC
-              </h1>
-          </div>
-          <div class="col-md-4">
-            <img class="imgProx" src="Imagenes/jakob-dalbjorn-730178-unsplash-min.jpg" alt="">
-          </div>
-          <div class="col-md-7">
-              <h3>
-                CURSO DE ACTUALIZACION: DERECHO BANCARIO Y FINANCIERO
-              </h3>
-              <div class="spanCont">
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="189" y="64" width="702" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAACmklEQVRIiY2VX2jOYRTHP+f138VSJLvQlkzJnyx/2pbGBantFrG/+R+1XEhxtxuRGxG5mNSadkPSbswFyooVKRkpF3KDpZYVjcJXZ86rn1/P+/aeent+73nO+Z7vOc95zmMtLS2UkC7gBLA2t/0auABcB37nXWcmsNrN7IZ/SBLwGHjlf4GVQJOZ9QF9kg4B18oB9puZMxuX1A3cS5GX1GxmAw4saQewq7hXyNgNBNhlSUtKgYU8klQDnDOzncDt4saMuro6X4+Z2WngoqTjZYDyct/MZpnZYeCbl8cPpcrMJoF3wLJMWmWRzCz794UfnqTFBTPrDuXJBNjsKLri1w/MSwQ8FUH2+6HsDeWdBJFRM6sHnkaLdElaD6zO2d2NdY8fSgMwBvwqRvZ0zKwnwA4Cm8Ku08xWeTZuk2P5DFjngF6MT4naNMQ6lHEaCpvGRB2nMYptszBRv7FYmzJOxe+XiTpOY1hra+tzoD6YZkHnAG/NbCkwGCXplDQOLAe+5hj+dHtneDMU23OF/uE1kTQiqU2Sg40CaxwsZ9vsPe1YzrAa+BBF3ZhI3WVuZDBVVOTYjQCbgdqCpI9AL7AB2Feiob9nwXJB2wLsrKT3/8aXmTnLakkLgMkUakLmm5lfuQlJ04dSyETrCOArFYK57aXwbS/qstPmAeBz0De3VoDnLXQAuAUMpwA9Uk9EHqyA3WD4HMnqCzm7L94eXksz6y0D5sOgRpLPz4n/9lJvipk99LQlrfBmzW3XmpmPulFJjXnfPEMijaMB3JcI1hc2XSnfJCDwBjgDbAE6MvrdwDbgfIL534BlnlFn8xlYlLnnfl+nJFXFwK2Y4bTEAbn4gH3i9zV6ruT7kHqXszIc9bwaSn/AsvPxfwH+AG29+bK+N9VkAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  Lima, Lima
-                </span>
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="64" y="64" width="952" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADt0lEQVRIiZWWa4iVVRSGn/c4pRghoZklpVKD2UxB91LDX0JORGWKkiYkkhH96cYEGf3o4hSjGJIKkgSZWkkFlaVFkDLdIAoLC+1HWlSm3cakGdRWrNP7yefX8Ywu+Nj7rL3OWnu967bV0dHBADQJWABcD4yqiO4FNgPPAVubqWlpcpaKVwDjJOXvD4B1wHdAAGOBy4F5ETEP+B64C9h0MoZeBG6TtAu4EXiz2W0lTQOWRMRbwMvArIEM5e8vgQsl3QE8XzqbYS9lj2qG7SXg7fwkzY2IF4DLgIuBvqOXqcToG0njgYuAr81bDDwUkbr5BRhpfn1vWLuBB82/ANgVEXuAMYXiWsnIehuZYCOjgc9spAs4BzgLWAts9H5URDwBPABsB84DvgXOl5T716seTZTUAxRwDQf2W2ZERPzaLEbAMEl/eJ8X+iljnLGOiKnAe7V0XdKrTtUiJh9lHCLiADDE8DSj4RHRG//h+4nlMkN3S9qY/0/o2g3D7RZ4DGiNiJEO6rnAQMWW3lwJnGn5bvPnpLfAVTXjm/Su10XAckn7JSXeg4FM264GBk7x+huwU1JC/BRwv/kZjn+AzjR0M/CpD4qbd5aUZaE+LKmzYmw50C9psOEv+Iu8zvC6Dbihxa71mDkb+BP4u3LzJ4EjkroiojVvKSkVPQscqsgediLNdnZ+CEwp0nuP1yywIS7EUysKEpKPJU23kc+BewxNQS3uIqcBB8q6axVlRdX3lZmZTP62NtpXqM86yjqPtqCigtOLfuCm6r9Nnb7tIODeBueHHZt9lsNFXDfUC0w2M5tpduLT0/UGt8VwHUOFnBMis3SE6wiPmb6a28QVZm7x2l1VdhK02KJF+7ku45aGlpgxzesjwJ0Rka2krdREm1F60B4RZxvSwtgUr0/Xe52kvQ5aofSriGhzYC/JbjyAoYzxDmCoi7zV/B8cqzPqWRcR090+Flogm2zWTab6XxWlKjKpRAclDXWMrjE7G/ToiLg1Y1ikd09EbABWeWD1+n2QdfMj8EyOdMtuKOGfniyVtM8jJaHLNpTjZk1EvAa8T4PBt0NSzqNLgS/My5byaERkhv6eMJhf30vKgn08ZcxvM/RlCP9naJANtEu6G1hZOuvwKK+5IBOndyrviQURsTobrGPbfzxDBeUUnSMpXzb3uWc1o2zMSyMi4U3ZmVXZ472C5uajIyKWAa84yDnQsr/ttkdZ8QnxtS7Y7Gm3lMf3iRhKesPfxIiY7zq7uiLzs6fyGo+DxgT8C8nuOSg/S7IhAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  17:00 hrs                
-                </span>
-              </div>
-              <p class="Pdescripcion">
-                ¿Qué nuevo rol han tomado las cooperativas a partir de su regulación por la SBS?, ¿Qué es el FINTECH y como ha revolucionado el sistema?
-              </p>
-              <div> 
-                <a href="#"><button type="button" class="btn btnComprar">Comprar Entrada</button></a> 
-              </div>
-          </div>
-
-      </div>
-    </section>
-    <hr class="separador">
-
-    <section class="secProximos">
-      <div class="row">
-          
-          <div class="col-md-1 divfecha">
-              <h1 class="date text-center h1fecha">
-                  01 DIC
-              </h1>
-          </div>
-          <div class="col-md-4">
-            <img class="imgProx" src="Imagenes/jakob-dalbjorn-730178-unsplash-min.jpg" alt="">
-          </div>
-          <div class="col-md-7">
-              <h3>
-                CURSO DE ACTUALIZACION: DERECHO BANCARIO Y FINANCIERO
-              </h3>
-              <div class="spanCont">
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="189" y="64" width="702" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAACmklEQVRIiY2VX2jOYRTHP+f138VSJLvQlkzJnyx/2pbGBantFrG/+R+1XEhxtxuRGxG5mNSadkPSbswFyooVKRkpF3KDpZYVjcJXZ86rn1/P+/aeent+73nO+Z7vOc95zmMtLS2UkC7gBLA2t/0auABcB37nXWcmsNrN7IZ/SBLwGHjlf4GVQJOZ9QF9kg4B18oB9puZMxuX1A3cS5GX1GxmAw4saQewq7hXyNgNBNhlSUtKgYU8klQDnDOzncDt4saMuro6X4+Z2WngoqTjZYDyct/MZpnZYeCbl8cPpcrMJoF3wLJMWmWRzCz794UfnqTFBTPrDuXJBNjsKLri1w/MSwQ8FUH2+6HsDeWdBJFRM6sHnkaLdElaD6zO2d2NdY8fSgMwBvwqRvZ0zKwnwA4Cm8Ku08xWeTZuk2P5DFjngF6MT4naNMQ6lHEaCpvGRB2nMYptszBRv7FYmzJOxe+XiTpOY1hra+tzoD6YZkHnAG/NbCkwGCXplDQOLAe+5hj+dHtneDMU23OF/uE1kTQiqU2Sg40CaxwsZ9vsPe1YzrAa+BBF3ZhI3WVuZDBVVOTYjQCbgdqCpI9AL7AB2Feiob9nwXJB2wLsrKT3/8aXmTnLakkLgMkUakLmm5lfuQlJ04dSyETrCOArFYK57aXwbS/qstPmAeBz0De3VoDnLXQAuAUMpwA9Uk9EHqyA3WD4HMnqCzm7L94eXksz6y0D5sOgRpLPz4n/9lJvipk99LQlrfBmzW3XmpmPulFJjXnfPEMijaMB3JcI1hc2XSnfJCDwBjgDbAE6MvrdwDbgfIL534BlnlFn8xlYlLnnfl+nJFXFwK2Y4bTEAbn4gH3i9zV6ruT7kHqXszIc9bwaSn/AsvPxfwH+AG29+bK+N9VkAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  Lima, Lima
-                </span>
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="64" y="64" width="952" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADt0lEQVRIiZWWa4iVVRSGn/c4pRghoZklpVKD2UxB91LDX0JORGWKkiYkkhH96cYEGf3o4hSjGJIKkgSZWkkFlaVFkDLdIAoLC+1HWlSm3cakGdRWrNP7yefX8Ywu+Nj7rL3OWnu967bV0dHBADQJWABcD4yqiO4FNgPPAVubqWlpcpaKVwDjJOXvD4B1wHdAAGOBy4F5ETEP+B64C9h0MoZeBG6TtAu4EXiz2W0lTQOWRMRbwMvArIEM5e8vgQsl3QE8XzqbYS9lj2qG7SXg7fwkzY2IF4DLgIuBvqOXqcToG0njgYuAr81bDDwUkbr5BRhpfn1vWLuBB82/ANgVEXuAMYXiWsnIehuZYCOjgc9spAs4BzgLWAts9H5URDwBPABsB84DvgXOl5T716seTZTUAxRwDQf2W2ZERPzaLEbAMEl/eJ8X+iljnLGOiKnAe7V0XdKrTtUiJh9lHCLiADDE8DSj4RHRG//h+4nlMkN3S9qY/0/o2g3D7RZ4DGiNiJEO6rnAQMWW3lwJnGn5bvPnpLfAVTXjm/Su10XAckn7JSXeg4FM264GBk7x+huwU1JC/BRwv/kZjn+AzjR0M/CpD4qbd5aUZaE+LKmzYmw50C9psOEv+Iu8zvC6Dbihxa71mDkb+BP4u3LzJ4EjkroiojVvKSkVPQscqsgediLNdnZ+CEwp0nuP1yywIS7EUysKEpKPJU23kc+BewxNQS3uIqcBB8q6axVlRdX3lZmZTP62NtpXqM86yjqPtqCigtOLfuCm6r9Nnb7tIODeBueHHZt9lsNFXDfUC0w2M5tpduLT0/UGt8VwHUOFnBMis3SE6wiPmb6a28QVZm7x2l1VdhK02KJF+7ku45aGlpgxzesjwJ0Rka2krdREm1F60B4RZxvSwtgUr0/Xe52kvQ5aofSriGhzYC/JbjyAoYzxDmCoi7zV/B8cqzPqWRcR090+Flogm2zWTab6XxWlKjKpRAclDXWMrjE7G/ToiLg1Y1ikd09EbABWeWD1+n2QdfMj8EyOdMtuKOGfniyVtM8jJaHLNpTjZk1EvAa8T4PBt0NSzqNLgS/My5byaERkhv6eMJhf30vKgn08ZcxvM/RlCP9naJANtEu6G1hZOuvwKK+5IBOndyrviQURsTobrGPbfzxDBeUUnSMpXzb3uWc1o2zMSyMi4U3ZmVXZ472C5uajIyKWAa84yDnQsr/ttkdZ8QnxtS7Y7Gm3lMf3iRhKesPfxIiY7zq7uiLzs6fyGo+DxgT8C8nuOSg/S7IhAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  17:00 hrs                
-                </span>
-              </div>
-              <p class="Pdescripcion">
-               ¿Qué nuevo rol han tomado las cooperativas a partir de su regulación por la SBS?, ¿Qué es el FINTECH y como ha revolucionado el sistema?
-              </p>
-              <div> 
-                <a href="#"><button type="button" class="btn btnComprar">Comprar Entrada</button></a> 
-              </div>
-          </div>
-
-      </div>
-    </section>
-    <hr class="separador">
-
-    <section class="secProximos">
-      <div class="row">
-          
-          <div class="col-md-1 divfecha">
-              <h1 class="date text-center h1fecha">
-                  01 DIC
-              </h1>
-          </div>
-          <div class="col-md-4">
-            <img class="imgProx" src="Imagenes/jakob-dalbjorn-730178-unsplash-min.jpg" alt="">
-          </div>
-          <div class="col-md-7">
-              <h3>
-                CURSO DE ACTUALIZACION: DERECHO BANCARIO Y FINANCIERO
-              </h3>
-              <div class="spanCont">
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="189" y="64" width="702" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAACmklEQVRIiY2VX2jOYRTHP+f138VSJLvQlkzJnyx/2pbGBantFrG/+R+1XEhxtxuRGxG5mNSadkPSbswFyooVKRkpF3KDpZYVjcJXZ86rn1/P+/aeent+73nO+Z7vOc95zmMtLS2UkC7gBLA2t/0auABcB37nXWcmsNrN7IZ/SBLwGHjlf4GVQJOZ9QF9kg4B18oB9puZMxuX1A3cS5GX1GxmAw4saQewq7hXyNgNBNhlSUtKgYU8klQDnDOzncDt4saMuro6X4+Z2WngoqTjZYDyct/MZpnZYeCbl8cPpcrMJoF3wLJMWmWRzCz794UfnqTFBTPrDuXJBNjsKLri1w/MSwQ8FUH2+6HsDeWdBJFRM6sHnkaLdElaD6zO2d2NdY8fSgMwBvwqRvZ0zKwnwA4Cm8Ku08xWeTZuk2P5DFjngF6MT4naNMQ6lHEaCpvGRB2nMYptszBRv7FYmzJOxe+XiTpOY1hra+tzoD6YZkHnAG/NbCkwGCXplDQOLAe+5hj+dHtneDMU23OF/uE1kTQiqU2Sg40CaxwsZ9vsPe1YzrAa+BBF3ZhI3WVuZDBVVOTYjQCbgdqCpI9AL7AB2Feiob9nwXJB2wLsrKT3/8aXmTnLakkLgMkUakLmm5lfuQlJ04dSyETrCOArFYK57aXwbS/qstPmAeBz0De3VoDnLXQAuAUMpwA9Uk9EHqyA3WD4HMnqCzm7L94eXksz6y0D5sOgRpLPz4n/9lJvipk99LQlrfBmzW3XmpmPulFJjXnfPEMijaMB3JcI1hc2XSnfJCDwBjgDbAE6MvrdwDbgfIL534BlnlFn8xlYlLnnfl+nJFXFwK2Y4bTEAbn4gH3i9zV6ruT7kHqXszIc9bwaSn/AsvPxfwH+AG29+bK+N9VkAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  Lima, Lima
-                </span>
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="64" y="64" width="952" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADt0lEQVRIiZWWa4iVVRSGn/c4pRghoZklpVKD2UxB91LDX0JORGWKkiYkkhH96cYEGf3o4hSjGJIKkgSZWkkFlaVFkDLdIAoLC+1HWlSm3cakGdRWrNP7yefX8Ywu+Nj7rL3OWnu967bV0dHBADQJWABcD4yqiO4FNgPPAVubqWlpcpaKVwDjJOXvD4B1wHdAAGOBy4F5ETEP+B64C9h0MoZeBG6TtAu4EXiz2W0lTQOWRMRbwMvArIEM5e8vgQsl3QE8XzqbYS9lj2qG7SXg7fwkzY2IF4DLgIuBvqOXqcToG0njgYuAr81bDDwUkbr5BRhpfn1vWLuBB82/ANgVEXuAMYXiWsnIehuZYCOjgc9spAs4BzgLWAts9H5URDwBPABsB84DvgXOl5T716seTZTUAxRwDQf2W2ZERPzaLEbAMEl/eJ8X+iljnLGOiKnAe7V0XdKrTtUiJh9lHCLiADDE8DSj4RHRG//h+4nlMkN3S9qY/0/o2g3D7RZ4DGiNiJEO6rnAQMWW3lwJnGn5bvPnpLfAVTXjm/Su10XAckn7JSXeg4FM264GBk7x+huwU1JC/BRwv/kZjn+AzjR0M/CpD4qbd5aUZaE+LKmzYmw50C9psOEv+Iu8zvC6Dbihxa71mDkb+BP4u3LzJ4EjkroiojVvKSkVPQscqsgediLNdnZ+CEwp0nuP1yywIS7EUysKEpKPJU23kc+BewxNQS3uIqcBB8q6axVlRdX3lZmZTP62NtpXqM86yjqPtqCigtOLfuCm6r9Nnb7tIODeBueHHZt9lsNFXDfUC0w2M5tpduLT0/UGt8VwHUOFnBMis3SE6wiPmb6a28QVZm7x2l1VdhK02KJF+7ku45aGlpgxzesjwJ0Rka2krdREm1F60B4RZxvSwtgUr0/Xe52kvQ5aofSriGhzYC/JbjyAoYzxDmCoi7zV/B8cqzPqWRcR090+Flogm2zWTab6XxWlKjKpRAclDXWMrjE7G/ToiLg1Y1ikd09EbABWeWD1+n2QdfMj8EyOdMtuKOGfniyVtM8jJaHLNpTjZk1EvAa8T4PBt0NSzqNLgS/My5byaERkhv6eMJhf30vKgn08ZcxvM/RlCP9naJANtEu6G1hZOuvwKK+5IBOndyrviQURsTobrGPbfzxDBeUUnSMpXzb3uWc1o2zMSyMi4U3ZmVXZ472C5uajIyKWAa84yDnQsr/ttkdZ8QnxtS7Y7Gm3lMf3iRhKesPfxIiY7zq7uiLzs6fyGo+DxgT8C8nuOSg/S7IhAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  17:00 hrs                
-                </span>
-              </div>
-              <p class="Pdescripcion">
-                ¿Qué nuevo rol han tomado las cooperativas a partir de su regulación por la SBS?, ¿Qué es el FINTECH y como ha revolucionado el sistema?
-              </p>
-              <div> 
-                <a href="#"><button type="button" class="btn btnComprar">Comprar Entrada</button></a> 
-              </div>
-          </div>
-
-      </div>
-    </section>
-    <hr class="separador">
-
-    <section class="secProximos">
-      <div class="row">
-          
-          <div class="col-md-1 divfecha">
-              <h1 class="date text-center h1fecha">
-                  01 DIC
-              </h1>
-          </div>
-          <div class="col-md-4">
-            <img class="imgProx" src="Imagenes/jakob-dalbjorn-730178-unsplash-min.jpg" alt="">
-          </div>
-          <div class="col-md-7">
-              <h3>
-                CURSO DE ACTUALIZACION: DERECHO BANCARIO Y FINANCIERO
-              </h3>
-              <div class="spanCont">
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="189" y="64" width="702" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAACmklEQVRIiY2VX2jOYRTHP+f138VSJLvQlkzJnyx/2pbGBantFrG/+R+1XEhxtxuRGxG5mNSadkPSbswFyooVKRkpF3KDpZYVjcJXZ86rn1/P+/aeent+73nO+Z7vOc95zmMtLS2UkC7gBLA2t/0auABcB37nXWcmsNrN7IZ/SBLwGHjlf4GVQJOZ9QF9kg4B18oB9puZMxuX1A3cS5GX1GxmAw4saQewq7hXyNgNBNhlSUtKgYU8klQDnDOzncDt4saMuro6X4+Z2WngoqTjZYDyct/MZpnZYeCbl8cPpcrMJoF3wLJMWmWRzCz794UfnqTFBTPrDuXJBNjsKLri1w/MSwQ8FUH2+6HsDeWdBJFRM6sHnkaLdElaD6zO2d2NdY8fSgMwBvwqRvZ0zKwnwA4Cm8Ku08xWeTZuk2P5DFjngF6MT4naNMQ6lHEaCpvGRB2nMYptszBRv7FYmzJOxe+XiTpOY1hra+tzoD6YZkHnAG/NbCkwGCXplDQOLAe+5hj+dHtneDMU23OF/uE1kTQiqU2Sg40CaxwsZ9vsPe1YzrAa+BBF3ZhI3WVuZDBVVOTYjQCbgdqCpI9AL7AB2Feiob9nwXJB2wLsrKT3/8aXmTnLakkLgMkUakLmm5lfuQlJ04dSyETrCOArFYK57aXwbS/qstPmAeBz0De3VoDnLXQAuAUMpwA9Uk9EHqyA3WD4HMnqCzm7L94eXksz6y0D5sOgRpLPz4n/9lJvipk99LQlrfBmzW3XmpmPulFJjXnfPEMijaMB3JcI1hc2XSnfJCDwBjgDbAE6MvrdwDbgfIL534BlnlFn8xlYlLnnfl+nJFXFwK2Y4bTEAbn4gH3i9zV6ruT7kHqXszIc9bwaSn/AsvPxfwH+AG29+bK+N9VkAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  Lima, Lima
-                </span>
-                <span class="spanInfo">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
-                    <image x="64" y="64" width="952" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADt0lEQVRIiZWWa4iVVRSGn/c4pRghoZklpVKD2UxB91LDX0JORGWKkiYkkhH96cYEGf3o4hSjGJIKkgSZWkkFlaVFkDLdIAoLC+1HWlSm3cakGdRWrNP7yefX8Ywu+Nj7rL3OWnu967bV0dHBADQJWABcD4yqiO4FNgPPAVubqWlpcpaKVwDjJOXvD4B1wHdAAGOBy4F5ETEP+B64C9h0MoZeBG6TtAu4EXiz2W0lTQOWRMRbwMvArIEM5e8vgQsl3QE8XzqbYS9lj2qG7SXg7fwkzY2IF4DLgIuBvqOXqcToG0njgYuAr81bDDwUkbr5BRhpfn1vWLuBB82/ANgVEXuAMYXiWsnIehuZYCOjgc9spAs4BzgLWAts9H5URDwBPABsB84DvgXOl5T716seTZTUAxRwDQf2W2ZERPzaLEbAMEl/eJ8X+iljnLGOiKnAe7V0XdKrTtUiJh9lHCLiADDE8DSj4RHRG//h+4nlMkN3S9qY/0/o2g3D7RZ4DGiNiJEO6rnAQMWW3lwJnGn5bvPnpLfAVTXjm/Su10XAckn7JSXeg4FM264GBk7x+huwU1JC/BRwv/kZjn+AzjR0M/CpD4qbd5aUZaE+LKmzYmw50C9psOEv+Iu8zvC6Dbihxa71mDkb+BP4u3LzJ4EjkroiojVvKSkVPQscqsgediLNdnZ+CEwp0nuP1yywIS7EUysKEpKPJU23kc+BewxNQS3uIqcBB8q6axVlRdX3lZmZTP62NtpXqM86yjqPtqCigtOLfuCm6r9Nnb7tIODeBueHHZt9lsNFXDfUC0w2M5tpduLT0/UGt8VwHUOFnBMis3SE6wiPmb6a28QVZm7x2l1VdhK02KJF+7ku45aGlpgxzesjwJ0Rka2krdREm1F60B4RZxvSwtgUr0/Xe52kvQ5aofSriGhzYC/JbjyAoYzxDmCoi7zV/B8cqzPqWRcR090+Flogm2zWTab6XxWlKjKpRAclDXWMrjE7G/ToiLg1Y1ikd09EbABWeWD1+n2QdfMj8EyOdMtuKOGfniyVtM8jJaHLNpTjZk1EvAa8T4PBt0NSzqNLgS/My5byaERkhv6eMJhf30vKgn08ZcxvM/RlCP9naJANtEu6G1hZOuvwKK+5IBOndyrviQURsTobrGPbfzxDBeUUnSMpXzb3uWc1o2zMSyMi4U3ZmVXZ472C5uajIyKWAa84yDnQsr/ttkdZ8QnxtS7Y7Gm3lMf3iRhKesPfxIiY7zq7uiLzs6fyGo+DxgT8C8nuOSg/S7IhAAAAAElFTkSuQmCC"/>
-                  </svg>
-                  17:00 hrs                
-                </span>
-              </div>
-              <p class="Pdescripcion">
-               ¿Qué nuevo rol han tomado las cooperativas a partir de su regulación por la SBS?, ¿Qué es el FINTECH y como ha revolucionado el sistema?
-              </p>
-              <div> 
-                <a href="#"><button type="button" class="btn btnComprar">Comprar Entrada</button></a> 
-              </div>
-          </div>
-
-      </div>
-    </section>
-    <hr class="separador">
-
+   
 
     <!-- div class="next">
       <a href="#"><button type="button" class="btn siguiente">Siguiente > </button></a>
@@ -351,6 +118,129 @@
 
     <script src="js/scriptlogo.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+       <script>
+    
+ $.getJSON("listaEventos", function (data){
+		listarEventosPasados(data);
+
+});
+    
+    
+	function listarEventosPasados(data){
+		
+		let ordenFecha = [];
+		
+		 $.each(data, function(index,item){
+	
+ 		// if(item.cargo.descripcion == "Marketing & financiamiento" || item.cargo.descripcion == "Vicepresidente")
+			 if(item.tipoEventos.descripcion == "proximos"){				 
+				 ordenFecha.push(item);				 
+				 ordenFecha.sort( (a, b) => (a.fecha_pub > b.fecha_pub) ? 1 : -1)				
+				  console.log(ordenFecha);				
+			 }  		  
+		}); 
+		 
+		 /*<section class="secProximos">
+      <div class="row">
+          
+          <div class="col-md-1 divfecha">
+              <h1 class="date text-center h1fecha">
+                  01 DIC
+              </h1>
+          </div>
+          <div class="col-md-4">
+            <img class="imgProx" src="Imagenes/jakob-dalbjorn-730178-unsplash-min.jpg" alt="">
+          </div>
+          <div class="col-md-7">
+              <h3>
+                CURSO DE ACTUALIZACION: DERECHO BANCARIO Y FINANCIERO
+              </h3>
+              <div class="spanCont">
+                <span class="spanInfo">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
+                    <image x="189" y="64" width="702" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAACmklEQVRIiY2VX2jOYRTHP+f138VSJLvQlkzJnyx/2pbGBantFrG/+R+1XEhxtxuRGxG5mNSadkPSbswFyooVKRkpF3KDpZYVjcJXZ86rn1/P+/aeent+73nO+Z7vOc95zmMtLS2UkC7gBLA2t/0auABcB37nXWcmsNrN7IZ/SBLwGHjlf4GVQJOZ9QF9kg4B18oB9puZMxuX1A3cS5GX1GxmAw4saQewq7hXyNgNBNhlSUtKgYU8klQDnDOzncDt4saMuro6X4+Z2WngoqTjZYDyct/MZpnZYeCbl8cPpcrMJoF3wLJMWmWRzCz794UfnqTFBTPrDuXJBNjsKLri1w/MSwQ8FUH2+6HsDeWdBJFRM6sHnkaLdElaD6zO2d2NdY8fSgMwBvwqRvZ0zKwnwA4Cm8Ku08xWeTZuk2P5DFjngF6MT4naNMQ6lHEaCpvGRB2nMYptszBRv7FYmzJOxe+XiTpOY1hra+tzoD6YZkHnAG/NbCkwGCXplDQOLAe+5hj+dHtneDMU23OF/uE1kTQiqU2Sg40CaxwsZ9vsPe1YzrAa+BBF3ZhI3WVuZDBVVOTYjQCbgdqCpI9AL7AB2Feiob9nwXJB2wLsrKT3/8aXmTnLakkLgMkUakLmm5lfuQlJ04dSyETrCOArFYK57aXwbS/qstPmAeBz0De3VoDnLXQAuAUMpwA9Uk9EHqyA3WD4HMnqCzm7L94eXksz6y0D5sOgRpLPz4n/9lJvipk99LQlrfBmzW3XmpmPulFJjXnfPEMijaMB3JcI1hc2XSnfJCDwBjgDbAE6MvrdwDbgfIL534BlnlFn8xlYlLnnfl+nJFXFwK2Y4bTEAbn4gH3i9zV6ruT7kHqXszIc9bwaSn/AsvPxfwH+AG29+bK+N9VkAAAAAElFTkSuQmCC"/>
+                  </svg>
+                  Lima, Lima
+                </span>
+                <span class="spanInfo">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.024" height="30.024" viewBox="0 0 1080 1080">
+                    <image x="64" y="64" width="952" height="952" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADt0lEQVRIiZWWa4iVVRSGn/c4pRghoZklpVKD2UxB91LDX0JORGWKkiYkkhH96cYEGf3o4hSjGJIKkgSZWkkFlaVFkDLdIAoLC+1HWlSm3cakGdRWrNP7yefX8Ywu+Nj7rL3OWnu967bV0dHBADQJWABcD4yqiO4FNgPPAVubqWlpcpaKVwDjJOXvD4B1wHdAAGOBy4F5ETEP+B64C9h0MoZeBG6TtAu4EXiz2W0lTQOWRMRbwMvArIEM5e8vgQsl3QE8XzqbYS9lj2qG7SXg7fwkzY2IF4DLgIuBvqOXqcToG0njgYuAr81bDDwUkbr5BRhpfn1vWLuBB82/ANgVEXuAMYXiWsnIehuZYCOjgc9spAs4BzgLWAts9H5URDwBPABsB84DvgXOl5T716seTZTUAxRwDQf2W2ZERPzaLEbAMEl/eJ8X+iljnLGOiKnAe7V0XdKrTtUiJh9lHCLiADDE8DSj4RHRG//h+4nlMkN3S9qY/0/o2g3D7RZ4DGiNiJEO6rnAQMWW3lwJnGn5bvPnpLfAVTXjm/Su10XAckn7JSXeg4FM264GBk7x+huwU1JC/BRwv/kZjn+AzjR0M/CpD4qbd5aUZaE+LKmzYmw50C9psOEv+Iu8zvC6Dbihxa71mDkb+BP4u3LzJ4EjkroiojVvKSkVPQscqsgediLNdnZ+CEwp0nuP1yywIS7EUysKEpKPJU23kc+BewxNQS3uIqcBB8q6axVlRdX3lZmZTP62NtpXqM86yjqPtqCigtOLfuCm6r9Nnb7tIODeBueHHZt9lsNFXDfUC0w2M5tpduLT0/UGt8VwHUOFnBMis3SE6wiPmb6a28QVZm7x2l1VdhK02KJF+7ku45aGlpgxzesjwJ0Rka2krdREm1F60B4RZxvSwtgUr0/Xe52kvQ5aofSriGhzYC/JbjyAoYzxDmCoi7zV/B8cqzPqWRcR090+Flogm2zWTab6XxWlKjKpRAclDXWMrjE7G/ToiLg1Y1ikd09EbABWeWD1+n2QdfMj8EyOdMtuKOGfniyVtM8jJaHLNpTjZk1EvAa8T4PBt0NSzqNLgS/My5byaERkhv6eMJhf30vKgn08ZcxvM/RlCP9naJANtEu6G1hZOuvwKK+5IBOndyrviQURsTobrGPbfzxDBeUUnSMpXzb3uWc1o2zMSyMi4U3ZmVXZ472C5uajIyKWAa84yDnQsr/ttkdZ8QnxtS7Y7Gm3lMf3iRhKesPfxIiY7zq7uiLzs6fyGo+DxgT8C8nuOSg/S7IhAAAAAElFTkSuQmCC"/>
+                  </svg>
+                  17:00 hrs                
+                </span>
+              </div>
+              <p class="Pdescripcion">
+               ¿Qué nuevo rol han tomado las cooperativas a partir de su regulación por la SBS?, ¿Qué es el FINTECH y como ha revolucionado el sistema?
+              </p>
+              <div> 
+                <a href="#"><button type="button" class="btn btnComprar">Comprar Entrada</button></a> 
+              </div>
+          </div>
+
+      </div>
+    </section>
+    <hr class="separador">*/
+		 
+		 
+		 
+		 //ordenFecha.sort().reverse();
+		$.each(ordenFecha, function(i,item){
+				console.log(item.fecha_pub);
+				let fecha = item.fecha_pub;
+				let date  = new Date(fecha);
+				let dia = date.getDate();
+				
+				let month = date.toLocaleString('es-es', { month: 'short' });
+				
+						  $("#eventos-proximos").append("<section class='secProximos'>"+
+							      "<div class='row'>"+   
+							    "<div class='col-md-1 divfecha'>"+
+					              "<h1 class='date text-center h1fecha'>"+
+					              "<label > "+ dia + " <br>" + month.toUpperCase() + " </label>"+    
+					              "</h1>"+
+					          "</div>"+
+				          "<div class='col-lg-5 col-md-12 d-flex'>"+
+				            "<img class='imgProx m-auto' src="+item.imagen+" alt=''>"+
+				          "</div>"+
+				          "<div class='col-lg-5 col-md-12'>"+
+				              "<h3>"+
+				              item.nombre+
+				              "</h3>"+
+				              "<div class='spanCont'>"+
+				                "<span class='spanInfo'>"+
+				                  "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30.024' height='30.024' viewBox='0 0 1080 1080'>"+
+				                    "<image x='189' y='64' width='702' height='952' xlink:href='data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAACmklEQVRIiY2VX2jOYRTHP+f138VSJLvQlkzJnyx/2pbGBantFrG/+R+1XEhxtxuRGxG5mNSadkPSbswFyooVKRkpF3KDpZYVjcJXZ86rn1/P+/aeent+73nO+Z7vOc95zmMtLS2UkC7gBLA2t/0auABcB37nXWcmsNrN7IZ/SBLwGHjlf4GVQJOZ9QF9kg4B18oB9puZMxuX1A3cS5GX1GxmAw4saQewq7hXyNgNBNhlSUtKgYU8klQDnDOzncDt4saMuro6X4+Z2WngoqTjZYDyct/MZpnZYeCbl8cPpcrMJoF3wLJMWmWRzCz794UfnqTFBTPrDuXJBNjsKLri1w/MSwQ8FUH2+6HsDeWdBJFRM6sHnkaLdElaD6zO2d2NdY8fSgMwBvwqRvZ0zKwnwA4Cm8Ku08xWeTZuk2P5DFjngF6MT4naNMQ6lHEaCpvGRB2nMYptszBRv7FYmzJOxe+XiTpOY1hra+tzoD6YZkHnAG/NbCkwGCXplDQOLAe+5hj+dHtneDMU23OF/uE1kTQiqU2Sg40CaxwsZ9vsPe1YzrAa+BBF3ZhI3WVuZDBVVOTYjQCbgdqCpI9AL7AB2Feiob9nwXJB2wLsrKT3/8aXmTnLakkLgMkUakLmm5lfuQlJ04dSyETrCOArFYK57aXwbS/qstPmAeBz0De3VoDnLXQAuAUMpwA9Uk9EHqyA3WD4HMnqCzm7L94eXksz6y0D5sOgRpLPz4n/9lJvipk99LQlrfBmzW3XmpmPulFJjXnfPEMijaMB3JcI1hc2XSnfJCDwBjgDbAE6MvrdwDbgfIL534BlnlFn8xlYlLnnfl+nJFXFwK2Y4bTEAbn4gH3i9zV6ruT7kHqXszIc9bwaSn/AsvPxfwH+AG29+bK+N9VkAAAAAElFTkSuQmCC'/>"+
+				                  "</svg>"+
+				                  item.ubigeo.provincia + ', '+ item.ubigeo.distrito+
+				                "</span>"+
+				                "<span class='spanInfo'>"+
+				                  "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30.024' height='30.024' viewBox='0 0 1080 1080'>"+
+				                    "<image x='64' y='64' width='952' height='952' xlink:href='data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADt0lEQVRIiZWWa4iVVRSGn/c4pRghoZklpVKD2UxB91LDX0JORGWKkiYkkhH96cYEGf3o4hSjGJIKkgSZWkkFlaVFkDLdIAoLC+1HWlSm3cakGdRWrNP7yefX8Ywu+Nj7rL3OWnu967bV0dHBADQJWABcD4yqiO4FNgPPAVubqWlpcpaKVwDjJOXvD4B1wHdAAGOBy4F5ETEP+B64C9h0MoZeBG6TtAu4EXiz2W0lTQOWRMRbwMvArIEM5e8vgQsl3QE8XzqbYS9lj2qG7SXg7fwkzY2IF4DLgIuBvqOXqcToG0njgYuAr81bDDwUkbr5BRhpfn1vWLuBB82/ANgVEXuAMYXiWsnIehuZYCOjgc9spAs4BzgLWAts9H5URDwBPABsB84DvgXOl5T716seTZTUAxRwDQf2W2ZERPzaLEbAMEl/eJ8X+iljnLGOiKnAe7V0XdKrTtUiJh9lHCLiADDE8DSj4RHRG//h+4nlMkN3S9qY/0/o2g3D7RZ4DGiNiJEO6rnAQMWW3lwJnGn5bvPnpLfAVTXjm/Su10XAckn7JSXeg4FM264GBk7x+huwU1JC/BRwv/kZjn+AzjR0M/CpD4qbd5aUZaE+LKmzYmw50C9psOEv+Iu8zvC6Dbihxa71mDkb+BP4u3LzJ4EjkroiojVvKSkVPQscqsgediLNdnZ+CEwp0nuP1yywIS7EUysKEpKPJU23kc+BewxNQS3uIqcBB8q6axVlRdX3lZmZTP62NtpXqM86yjqPtqCigtOLfuCm6r9Nnb7tIODeBueHHZt9lsNFXDfUC0w2M5tpduLT0/UGt8VwHUOFnBMis3SE6wiPmb6a28QVZm7x2l1VdhK02KJF+7ku45aGlpgxzesjwJ0Rka2krdREm1F60B4RZxvSwtgUr0/Xe52kvQ5aofSriGhzYC/JbjyAoYzxDmCoi7zV/B8cqzPqWRcR090+Flogm2zWTab6XxWlKjKpRAclDXWMrjE7G/ToiLg1Y1ikd09EbABWeWD1+n2QdfMj8EyOdMtuKOGfniyVtM8jJaHLNpTjZk1EvAa8T4PBt0NSzqNLgS/My5byaERkhv6eMJhf30vKgn08ZcxvM/RlCP9naJANtEu6G1hZOuvwKK+5IBOndyrviQURsTobrGPbfzxDBeUUnSMpXzb3uWc1o2zMSyMi4U3ZmVXZ472C5uajIyKWAa84yDnQsr/ttkdZ8QnxtS7Y7Gm3lMf3iRhKesPfxIiY7zq7uiLzs6fyGo+DxgT8C8nuOSg/S7IhAAAAAElFTkSuQmCC'/>"+
+				                  "</svg>"+
+				                  "<label id='fecha-event'> &nbsp; "+ item.fecha_pub + " </label>"+           
+				                "</span>"+				              
+				              "</div>"+
+				              "<p class='Pdescripcion'>"+
+				              item.descripcion+
+				              "</p>"+
+				              "<div>"+
+				                "<a href='#'><button type='button' class='btnLeer mb-5'>Comprar entrada</button></a>"+
+				              "</div>"+
+				          "</div>"+
+				      "</div>"+
+				    "</section>"+
+				    "<hr class='separador'>");	
+				
+				
+		})
+	}
+    
+    
+    
+    
+    
+    </script>
 
 </body>
 </html>

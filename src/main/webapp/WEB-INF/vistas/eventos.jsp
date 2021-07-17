@@ -344,7 +344,7 @@
 								$('#panel-reg-edit').css('display','none');
 					            $('#panel-list').css('display','block');
 								mostrarMensaje(data.MENSAJE);						
-								//limpiarFormulario();
+								limpiarFormulario();
 								//listar();
 								listarEventos(data.lista);
 								validator.resetForm();
@@ -358,10 +358,23 @@
 				 
 				  return false;
 			};
+			return false;
 		});	
 
 
-	  
+	  function limpiarFormulario(){
+		 $("#id_evento").val(0);
+		  $("#id_nombre").val('');
+		  $("#id_descripcion").val('');
+		  $("#id_url").val('');
+		   $("#id_venta_entrada").val('');
+		   $("#id_fecha").val('');
+		   $("#id_tipo").val(' ');
+		   $("#foto_evento").attr('src','Imagenes/no-image.png');
+		
+		   $("#id_hora").val(' ');
+		   $("#id_capacidad").val('');
+	  }
  
 	function editar(idEvento,nombre,descripcion,url,entrada,capacidad,fecha_pub,tipoEventos,horario,imagen){
 		  
@@ -375,8 +388,8 @@
 		  $("#id_fecha").val(fecha_pub);
 		  $("#id_tipo").val(tipoEventos);
 		  $("#id_hora").val(horario);
-		  
-		  
+		  $("#foto_evento").attr('src',imagen);
+		 
 		  
 		  console.log(tipoEventos)		  
 		  $('#panel-reg-edit').css('display','block');

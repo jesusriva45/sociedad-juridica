@@ -22,7 +22,7 @@ header{
     height: auto;
 }
 
-
+imgProx
 /*estilos para el logo de la empresa*/
 .logoNav{
     position: relative;
@@ -155,14 +155,20 @@ li > a:hover{
     margin: auto;
 }
 .imgProx{
-    width: 80%;
-    height: 320px;
+    width: 500px;
+    height: 250px;
     padding: 10px;
 }
 .spanInfo{
     margin: 0px 40px 0px 0px;
 
 }
+
+#fecha-event{
+	position: absolute;
+	padding-top:2px;
+}
+
 .spanCont{
 width: 100%;
 margin-top: 40px;
@@ -173,12 +179,14 @@ margin-bottom: 40px;
 }
 
 .btnLeer{
-    width: 130px;
+    width: 100px;
+    padding:5px;
     background-color: #c6c7c8;
     border-color: none;
     color: #FFFFFF;
     margin-top: 30px;
     position: sticky;
+    border-radius: 5px;
 }
 .btnLeer:hover{
     background-color: #024059;

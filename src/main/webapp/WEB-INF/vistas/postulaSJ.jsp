@@ -265,8 +265,8 @@
 	})
 	
 	
-		$("#id_registrar").click(function() {
-			
+		$("#id_registrar").click(function(e) {
+			e.preventDefault();
 			var validator = $('#id_postula').data('bootstrapValidator');
 			validator.validate();
 			
@@ -305,7 +305,9 @@
 						mostrarMensaje(MSG_ERROR);
 					}
 				});
-			}
+				 return true;
+			};
+			return false;
 		});
 		
 		

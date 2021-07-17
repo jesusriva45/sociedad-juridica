@@ -290,7 +290,7 @@ function portada(data){
 				      "<img src="+item.imagen+" class='d-block position-relative' alt='' style='width:100vw;height:100vh'>"+
 				      "<div class='carousel-caption d-none d-md-block text-dark'>"+
 				       //"<h5>"+item.titulo+"</h5>"+
-				       "<a type='button' style='background-color: #024059; color:white' class='btn mb-5' href="+ item.url+" >Link &nbsp &nbsp <i class='fas fa-arrow-alt-circle-right'></i></a>"+
+				       "<a type='button' style='background-color: #024059; color:white' class='btn mb-5'  target='_blank' href="+ item.url+" >Link &nbsp &nbsp <i class='fas fa-arrow-alt-circle-right'></i></a>"+
 				        //"<p>Some representative placeholder content for the first slide.</p>"+
 				      "</div>"+
 				    "</div>");
