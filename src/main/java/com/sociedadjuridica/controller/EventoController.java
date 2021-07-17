@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +20,7 @@ import com.sociedadjuridica.entidad.Horario;
 import com.sociedadjuridica.entidad.TipoEventos;
 
 import com.sociedadjuridica.entidad.Ubigeo;
+import com.sociedadjuridica.entidad.Usuario;
 import com.sociedadjuridica.service.EventoService;
 
 @Controller
@@ -35,6 +36,13 @@ public class EventoController {
 	}
 	
 	
+	@ResponseBody
+	@RequestMapping("/listaEventosPagPrincipal")
+	public List<Eventos> listaEventosPagPrincipal(){
+		return eventoService.listaCursosPagPrincipal();
+	}
+	
+	
 	
 	
 	
@@ -44,11 +52,13 @@ public class EventoController {
 			@RequestParam("nombre") String nombre, 
 			@RequestParam("descripcion") String descripcion,
 			@RequestParam("url") String url, 
+			@RequestParam("venta_entrada") double venta_entrada, 
 			@RequestParam("capacidad") int capacidad, 
 			@RequestParam("fecha_pub") String fecha_pub,
 			@RequestParam(value = "tipoEventos", required = false) TipoEventos TipoEventos, 
 			//@RequestParam(value = "ubigeo", required = false) Ubigeo ubigeo,
-			@RequestParam("horario") Horario horario) {
+			@RequestParam("horario") Horario horario,
+			@RequestParam("imagen") String imagen) {
 		Map<String, Object> salida = new HashMap<>();
 		try {
 
@@ -58,6 +68,7 @@ public class EventoController {
 			evento.setNombre(nombre);
 			evento.setDescripcion(descripcion);
 			evento.setUrl(url);
+			evento.setEntrada(venta_entrada);
 			evento.setCapacidad(capacidad);
 			
 			Date date1 = new SimpleDateFormat("yyy-MM-dd").parse(fecha_pub);
@@ -72,7 +83,7 @@ public class EventoController {
 			evento.setTipoEventos(TipoEventos);
 			evento.setUbigeo(ubigeo);
 			evento.setHorario(horario);
-			
+			evento.setImagen(imagen);
 			
 
 			if (id_evento != 0) {
@@ -93,14 +104,27 @@ public class EventoController {
 		return salida;
 	}
 	
-	/*formData.append("id_evento", $("#id_evento").val());
-				  formData.append("nombre", $("#id_nombre").val());
-				  formData.append("descripcion", $("#id_descripcion").val());
-				  formData.append("url", $("#id_url").val());
-				  formData.append("fecha_pub", $("#id_fecha").val());
-				  formData.append("tipoEventos", $("#id_tipo").val());
-				  //formData.append("ubigeo", $("#id_rama_nuevo").val());
-				  formData.append("horario", $("#id_hora").val());*/
+	@ResponseBody
+	@RequestMapping("/eliminaCrudEvento")
+	public Map<String, Object> elimina(int id) {
+		Map<String, Object> salida = new HashMap<>();
+		try {
+			Optional<Eventos> objSalida = eventoService.obtienePorId(id);
+			if (objSalida.isPresent()) {
+				eventoService.eliminaEvento(id);
+				salida.put("MENSAJE","El evento"+ objSalida.get().getNombre() + " ha sido eliminado");
+			} else {
+				salida.put("MENSAJE", "Error en la eliminación");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			salida.put("MENSAJE", "Error en la eliminación");
+		} finally {
+			List<Eventos> lista = eventoService.listaEventos();
+			salida.put("lista", lista);
+		}
+		return salida;
+	}
 	
 
 }

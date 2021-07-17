@@ -179,7 +179,7 @@
 					
 					<div class="col-md-4 p-0 offset-md-3">
 					<label>Venta de Entrada</label> 
-					<input class="form-control" id="id_venta" name="precioPresencial" placeholder="S/ 0.00" />
+					<input class="form-control" id="id_venta_entrada" name="entrada" placeholder="S/ 0.00" />
 					</div>
 				</div>
 					
@@ -289,11 +289,11 @@
 					return salida;
 				},className:'text-center'},	
 				{data: function(row, type, val, meta){
-					var salida='<button type="button" style="width: 90px" class="btn btn-info btn-sm" onclick="editar(\''+row.idRevistas + '\',\'' + row.titulo +'\',\'' + row.descripcion +'\',\'' + row.precioPresencial + '\',\'' + row.precioVirtual + '\',\'' +  row.autor + '\',\'' +  row.foto + '\')">Editar</button>';
+					var salida='<button type="button" style="width: 90px" class="btn btn-info btn-sm" onclick="editar(\''+row.idEvento + '\',\'' + row.nombre +'\',\'' + row.descripcion +'\',\'' + row.url + '\',\'' + row.entrada + '\',\'' + row.capacidad + '\',\'' +  row.fecha_pub + '\',\''+  row.tipoEventos.idTipoEvento + '\',\''+  row.horario.idHorario + '\',\'' +  row.imagen + '\')">Editar</button>';
 					return salida;
 				},className:'text-center'},	
 				{data: function(row, type, val, meta){
-				    var salida='<button type="button" style="width: 90px" class="btn btn-warning btn-sm" onclick="eliminar(\'' + row.idRevistas + '\')">Eliminar</button>';
+				    var salida='<button type="button" style="width: 90px" class="btn btn-warning btn-sm" onclick="eliminar(\'' + row.idEvento + '\')">Eliminar</button>';
 					return salida;
 				},className:'text-center'},													
 			]                                     
@@ -317,12 +317,15 @@
 				  let foto = document.getElementById('foto_evento');	            
 			      var file =  foto.getAttribute("src");			  
 				
-				  formData.append("foto", file);
+				  formData.append("imagen", file);
+				  
+				  
 				  
 				  formData.append("id_evento", $("#id_evento").val());
 				  formData.append("nombre", $("#id_nombre").val());
 				  formData.append("descripcion", $("#id_descripcion").val());
 				  formData.append("url", $("#id_url").val());
+				  formData.append("venta_entrada", $("#id_venta_entrada").val());
 				  formData.append("fecha_pub", $("#id_fecha").val());
 				  formData.append("tipoEventos", $("#id_tipo").val());
 				  //formData.append("ubigeo", $("#id_rama_nuevo").val());
@@ -341,8 +344,9 @@
 								$('#panel-reg-edit').css('display','none');
 					            $('#panel-list').css('display','block');
 								mostrarMensaje(data.MENSAJE);						
-								limpiarFormulario();
+								//limpiarFormulario();
 								//listar();
+								listarEventos(data.lista);
 								validator.resetForm();
 							},
 							error: function(){
@@ -352,16 +356,52 @@
 							}
 						});
 				 
-				  //return false;
+				  return false;
 			};
 		});	
 
 
 	  
+ 
+	function editar(idEvento,nombre,descripcion,url,entrada,capacidad,fecha_pub,tipoEventos,horario,imagen){
+		  
+		  $('#foto_evento').attr('src',imagen);
+		  $("#id_evento").val(idEvento);
+		  $("#id_nombre").val(nombre);
+		  $("#id_descripcion").val(descripcion);
+		  $("#id_url").val(url);
+		  $("#id_venta_entrada").val(entrada)
+		  $("#id_capacidad").val(capacidad);
+		  $("#id_fecha").val(fecha_pub);
+		  $("#id_tipo").val(tipoEventos);
+		  $("#id_hora").val(horario);
+		  
+		  
+		  
+		  console.log(tipoEventos)		  
+		  $('#panel-reg-edit').css('display','block');
+		  $('#panel-list').css('display','none');
+		  
+}
 	  
-	  
-	  
-	  
+function eliminar(id){	
+		mostrarMensajeConfirmacion(MSG_ELIMINAR, accionEliminar,null,id);
+}
+
+function accionEliminar(id){	
+	    $.ajax({
+	          type: "POST",
+	          url: "eliminaCrudEvento", 
+	          data: {"id":id},
+	          success: function(data){
+	        	  listarEventos(data.lista);
+	        	  mostrarMensaje(data.MENSAJE);
+	          },
+	          error: function(){
+	        	  mostrarMensaje(MSG_ERROR);
+	          }
+	     });
+}
 	  
 
 	//-----------------------------------------

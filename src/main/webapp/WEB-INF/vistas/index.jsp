@@ -97,33 +97,8 @@
       </div>
     </section>
 
-    <section class="sectionCurso">
-      <div class="card">
-        <br>
-        <div class="texCard">
-          <h4>Curso</h4>
-          <br>
-          <p>
-            Especialidad de Derecho penal
-          </p>
-          <div> <a href="verCursos"><button type="button" class="btn vermasCursos">Ver más</button></a></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <br>
-        <div class="texCard">
-          <h4>Curso</h4>
-          <br>
-          <p>
-            Especialidad de Derecho penal
-          </p>
-          <div> <a href="verCursos"><button type="button" class="btn vermasCursos">Ver más</button></a> </div>
-        </div>
-      </div>
-
+    <section id="nuevos_cursos" class="sectionCurso row col-12">
     </section>
-
     <section class="secLoNuevo">
 
       <h3>Lo Nuevo</h3>
@@ -248,13 +223,58 @@ function filtrarPortada(){
 	portada(data);
 	});
 }
+
+function nuevosCursos(){
+	$.getJSON("listaEventosPagPrincipal", function (data){				
+		cursos(data);
+	console.log(data);
+	});
+}
 				
 	
 $(document).ready(function() {	
 	filtrarPortada();
+	nuevosCursos();
 })
 		
+		
+		
+		/*<div  class="card">
+        <br>
+        <div class="texCard">
+          <h4>Curso</h4>
+          <br>
+          <p>
+            Especialidad de Derecho penal
+          </p>
+          <div> <a href="verCursos"><button type="button" class="btn vermasCursos">Ver más</button></a></div>
+        </div>
+      </div>*/
+		
 	
+function cursos(data){
+    	  $.each(data, function(index,item){
+    		  $("#nuevos_cursos").append("<div id="+item.idEvento+" class='row col-12 card'>"+
+    			 "<br>"+
+    	        "<div class='col-7 texCard'>"+
+    	          "<h4>"+item.nombre+"</h4>"+
+    	          "<br>"+
+    	          "<p>"+item.descripcion+
+    	          "</p>"+
+    	          "<div id='div-ver-mas'> <a href='verCursos'><button type='button' class='btn vermasCursos'>Ver más</button></a></div>"+
+    	        "</div>"+
+    	       "<div class='col-5 d-flex m-auto'>"+
+    	        "<img class='m-auto rounded' width='220vw' height='220vh'  src="+item.imagen+">"+
+    	        "</div>"+
+    	      "</div>");
+    		  
+    		  //$("#"+item.idEvento+"").addClass("card");
+    		 // $("#"+item.idEvento+"").css({'background-image':"url("+item.imagen+")", 'background-size':'100% 250px'})
+    		  
+		});    	  
+}      
+      
+      
 	
 function portada(data){
 		//------------ AQUI SE INSERTA LAS IMAGENES AL CARRUSEL---------------------------------

@@ -16,11 +16,7 @@ header{
     /*background-attachment: fixed;*/ 
     background-size: 100% 100%;
 }
-/*estilo para que el row ocupe todo el ancho de la pantalla*/
-.row{
-    width: 100%;
-    height: auto;
-}
+
 
 
 /*estilos para el logo de la empresa*/
@@ -159,8 +155,6 @@ li > a:hover{
     color: #11C5D9;
 }
 .form-control{
-    width: 500px;
-    /*margin-bottom: 20px;*/
     margin-top: 25px;
     box-shadow: 5px 8px 10px #94999b;
 }
@@ -193,57 +187,31 @@ li > span{
     color: #11C5D9;
 }
 
-#cargaCV{
-    position: relative;
-    width: 50px;
-    height: 40px;
-    padding: 0px;
-    margin-left: -80px;
-    margin-top: 30px;/*cambio*/
 
-}
-#idCV{
-    position: absolute;
-    top: 0px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;  
-    margin-top: -20px; 
-}
-#idCV:hover{
-    cursor: pointer !important;
+/*---- INPUT FILE ----------*/
+
+.archivo-upload>input {	
+	
+	width:0px;
+	height:0px;
+	position:absolute;
+	z-index:-99999;
+	
 }
 
-#cargaNotas{
-    position: relative;
-    width: 50px;
-    height: 40px;
-    padding: 0px;
-    margin-left: -80px;
-    margin-top: 30px;/*cambio*/
-
-}
-#idNotas{
-    position: absolute;
-    top: 0px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;   
-    margin-top: -20px; 
-}
-#idNotas:hover{
-    cursor: pointer !important;
+.archivo-upload>label>svg:hover {
+	cursor: pointer;
 }
 
-.formcol{
-    margin-left: 0px;
+.archivo-upload>label>svg>img {
+	cursor: pointer;
+	z-index:999999;
 }
+.archivo-upload>label{
+	background: #EBEBEB
+}
+/*-----------------------------------*/
+
 
 
 /*estilos para el footer*/

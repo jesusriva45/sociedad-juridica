@@ -28,12 +28,16 @@ public class Eventos {
 	private int idEvento;
 
 	private String nombre;
-	
+
 	@Column(name = "descripcion")
 	private String descripcion;
-	
 
 	private String url;
+
+	private String imagen;
+
+	@Column(name = "valor_entrada")
+	private double entrada;
 
 	@Column(name = "capacidad")
 	private int capacidad;
@@ -127,6 +131,22 @@ public class Eventos {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	public double getEntrada() {
+		return entrada;
+	}
+
+	public void setEntrada(double entrada) {
+		this.entrada = entrada;
 	}
 
 }

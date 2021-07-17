@@ -47,10 +47,16 @@ public class EventoServiceImpl implements EventoService{
 		return eventoRepository.listaEventoPorNombreLike(filtro);
 	}
 
-	@Override
+	/*@Override
 	public List<Eventos> listaEventosPorTipo(int idTipo) {
 		// TODO Auto-generated method stub
-		return eventoRepository.listaEventosPorTipo(idTipo);
+		return null;//eventoRepository.listaEventosPorTipo(idTipo);
+	}*/
+
+	@Override
+	public List<Eventos> listaCursosPagPrincipal() {
+		// TODO Auto-generated method stub
+		return eventoRepository.listaCursosPagPrincipal();
 	}
 
 }

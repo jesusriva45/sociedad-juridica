@@ -5,6 +5,7 @@
 <html lang="en">
 
 <head> 
+
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrapValidator.js"></script>

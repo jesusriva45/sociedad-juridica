@@ -91,7 +91,9 @@
 					<th style="width: 25%">Nombre Completo</th>
 					<th style="width: 10%">Teléfono</th>
 					<th style="width: 10%">DNI</th>
-					<th style="width: 25%">Email</th>
+					<th style="width: 20%">Email</th>
+					<th style="width: 5%">CV</th>
+					<th style="width: 25%">Consolidado de Notas</th>
 					<th style="width: 10%">Estado</th>		
 					<th style="width: 10%">Editar</th>
 				</tr>
@@ -285,6 +287,20 @@ function agregarGrilla(lista){
 				{data: "telefono"},
 				{data: "dni"},
 				{data: "email"},
+				{data: function(row, type, val, meta){
+					console.log(row.cvPDF)
+					var salida="<a href="+row.cvPDF+" download="+row.nameCvPDF+">"+row.nameCvPDF+"</a>";
+					
+				    <!--var salida='<button type="button" style="width: 90px" class="btn btn-warning btn-sm" onclick="eliminar(\'' + row.idAlumno + '\')">Eliminar</button>';-->
+					return salida;
+				},className:'table-sm m-5 table-borderless  caption-top'},	
+				{data: function(row, type, val, meta){
+					let nombre = row.nameConsolidadoNotaPDF;
+					var salida="<a href="+row.consolidadoNotaPDF+" target='_blank' download='"+row.nameConsolidadoNotaPDF+"'>"+row.nameConsolidadoNotaPDF+"</a>";
+					
+				    <!--var salida='<button type="button" style="width: 90px" class="btn btn-warning btn-sm" onclick="eliminar(\'' + row.idAlumno + '\')">Eliminar</button>';-->
+					return salida;
+				},className:'table-sm m-5 table-borderless  caption-top'},	
 				{data: "nombreEstado"},
 				{data: function(row, type, val, meta){
 					var salida='<button class="table-btn-crud" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="editar(\''+row.idPostulante + '\',\'' + row.estado +'\')" ><i id="icon-editar" class="icon-crud"></i></button>';

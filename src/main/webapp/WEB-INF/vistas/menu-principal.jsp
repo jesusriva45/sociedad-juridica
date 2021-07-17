@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-  <script type="text/javascript"
-		src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
    
    <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/misEstilosIndex.css">

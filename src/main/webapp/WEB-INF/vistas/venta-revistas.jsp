@@ -478,7 +478,7 @@ function limpiarFormulario(){
 	$('#id_reg_virtual').val('');
 	$('#file-input').val('');
 	$('#fichero').html('');
-	$('#foto_revista').attr('src', 'Imagenes/fotos_recortados/300x300px.png');
+	$('#foto_revista').attr('src', 'Imagenes/no-image.png');
 }
 
 

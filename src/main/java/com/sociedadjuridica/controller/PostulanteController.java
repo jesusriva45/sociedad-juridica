@@ -3,6 +3,7 @@ package com.sociedadjuridica.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sociedadjuridica.entidad.Postulantes;
-
+import com.sociedadjuridica.entidad.Rama;
+import com.sociedadjuridica.entidad.TipoNoticias;
 import com.sociedadjuridica.service.PostulanteService;
 import com.sociedadjuridica.util.Constantes;
 
@@ -39,9 +41,31 @@ public class PostulanteController {
 	
 	@ResponseBody
 	@RequestMapping("/registraPostulante")
-	public Map<String, Object> insertaPostulantes(Postulantes obj){
+	public Map<String, Object> insertaPostulantes(
+			@RequestParam("nombre") String nombre, 
+			@RequestParam("telefono") String telefono, 
+			@RequestParam("dni") String dni,
+			@RequestParam("email") String email,
+			@RequestParam("cvPDF") String cvPDF,
+			@RequestParam("consolidadoNotaPDF") String consolidadoNotaPDF,
+			@RequestParam("nameCvPDF") String nameCvPDF,
+			@RequestParam("nameConsolidadoNotaPDF") String nameConsolidadoNotaPDF){
 		
 		Map<String, Object> salida=new HashMap<>();
+		
+		Postulantes obj = new Postulantes();
+		
+		obj.setNombre(nombre);
+		obj.setTelefono(telefono);
+		obj.setDni(dni);
+		obj.setEmail(email);
+		obj.setCvPDF(cvPDF);
+		obj.setConsolidadoNotaPDF(consolidadoNotaPDF);
+		obj.setNameCvPDF(nameCvPDF);
+		obj.setNameConsolidadoNotaPDF(nameConsolidadoNotaPDF);
+		obj.setEstado((byte) 0);
+		
+		System.out.println(cvPDF);
 		
 		Postulantes objSalida = postulanteService.insertaPostulantes(obj);
 		if(objSalida==null) {

@@ -20,8 +20,10 @@ public interface PostulanteRepository extends JpaRepository<Postulantes, Integer
 
 	@Transactional
 	@Modifying
-	@Query(value = "CALL sp_actualiza_estado_postulante(:idPostulante, :estado)", nativeQuery = true)
-	public void estadoPostulante(@Param("idPostulante") int id, @Param("estado") byte estado);
+	//@Query(value = "CALL sp_actualiza_estado_postulante(:idPostulante, :estado)", nativeQuery = true)
+	//update postulantes set estado = est where idpostulantes = id;
+	@Query(value = "update postulantes set estado = :est where idpostulantes = :idPostulante", nativeQuery = true)
+	public void estadoPostulante(@Param("idPostulante") int id, @Param("est") byte estado);
 
 	/*
 	 * @Transactional

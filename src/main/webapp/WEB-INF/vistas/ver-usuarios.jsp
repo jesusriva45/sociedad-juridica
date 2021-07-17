@@ -655,7 +655,7 @@ $("#id_btn_filtrar").click(function(){
 	$("#idDepartamento").val(' ');
 	$("#idProvincia").val(' ');
 	$("#idDistrito").val(' ');
-	$("#foto_usuario").attr('src',' ');
+	$("#foto_usuario").attr('src','Imagenes/photo-profile.jpeg');
 	
 	
 	

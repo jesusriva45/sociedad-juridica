@@ -16,7 +16,9 @@ public interface EventoService {
 	
 	public abstract List<Eventos> listaEventoPorNombreLike(String filtro);
 	
-	public abstract List<Eventos> listaEventosPorTipo(int idTipo);
+	//public abstract List<Eventos> listaEventosPorTipo(int idTipo);
+	
+	public abstract List<Eventos> listaCursosPagPrincipal();
 
 	
 	

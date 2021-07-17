@@ -5,23 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+   
+    
+   
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrapValidator.js"></script>
 	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/postula.css">
+	 <script src="js/global.js"></script>
+	 <script src="js/bootstrap.min.js"></script>
+	 
+   
+      
+	<link rel="stylesheet" href="css/postula.css">
+	<link rel="stylesheet" href="css/tipografias.css">
+ 
+  	<link rel="stylesheet" href="css/bootstrap.min.css">  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
     <link rel="shortcut icon" href="Iconos/isotipo.5.png">
-    <link rel="stylesheet" href="css/tipografias.css">
+    <!-- link rel="stylesheet" href="css/tipografias.css"-->
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrapValidator.css"/>
     
-
-    <title>Postula a SJ</title>
+ <link rel="stylesheet" href="css/bootstrapValidator.css"/>
+    <title>Postula a SaJ</title>
 </head>
 <body>
     
@@ -61,9 +70,7 @@
 					<input class="form-control" type="email" name="email" id="id_email" placeholder="Correo Electrónico">
                 </div>
                 
-                
-                
-                <input class="form-control" type="hidden" name="estado" id="id_estado" value="0">
+               
                 
                 
                 
@@ -77,29 +84,38 @@
                     <input class="form-control" type="email" name="email" id="id_email" placeholder="Correo Electrónico">
                     -->
 
-                    <div class="row w-100 p-0 m-0">
-                        <div class="col-md-12 formcol w-100 p-0 m-0">
-                            <input class="form-control" for="idCV" type="text" name="cv" id="cv" placeholder="Adjuntar CV" disabled="">
-                        </div>
-                        <div class="col-md-2 bi bi-upload" id="cargaCV">
-                            <input type="file" name="uploadCV" id="idCV" accept=".pdf">
-                        </div>
-                    </div>
+                
 
-                    <div class="row w-100 p-0 m-0">
-                        <div class="col-md-12 formcol w-100 p-0 m-0">
-                            <input class="form-control" for="idNotas" type="text" name="notas" id="notas" placeholder="Consolidado de Notas" disabled>
-                        </div>
-                        <div class="col-md-2 bi bi-upload" id="cargaNotas">
-                            <input type="file" name="uploadNotas" id="idNotas" accept=".pdf">
-                        </div>
-                    </div>
+				<div class="form-group archivo-upload  d-block  ms-auto me-auto">
+				 		<label for="idCV" class="w-100 form-control d-flex">
+					 			<span id="nombre_cv" class="me-auto ps-3" style="color:#767574">Adjuntar CV</span> 
+					 			<i class="bi bi-upload ms-auto me-5"></i>
+						</label> 
+				
+						<input type="file" name="uploadCV" id="idCV" accept=".pdf"/>				
+				</div>
+				
+				<div class="form-group archivo-upload  d-block  ms-auto me-auto">
+				 		<label for="idNotas" class="w-100 form-control d-flex" placehaolde>
+					 			<span id="nombre_consolidado" class="me-auto ps-3" style="color:#767574">Consolidado de Notas</span> 
+					 			<i class="bi bi-upload ms-auto me-5"></i>
+						</label> 
+				
+						<input type="file" name="uploadNotas" id="idNotas" accept=".pdf"/>				
+				</div>
+
+                  
                     
                     <div> 
                         <a href="#"><button id="id_registrar" type="button" class="btn btnPostula">Enviar</button></a> 
                     </div>
 
                 </form>
+               
+                
+                <!-- embed id="VISOR-PDF"
+ src=""
+ type="application/pdf" width="100%" height="600px"/-->
             </div>
             <div class="col-md-6">
                 <img class="imgPostula" src="Imagenes/pexels-august-de-richelieu-4427430.jpg" alt="">
@@ -182,8 +198,6 @@
 
       <script src="js/scriptlogo.js"></script>
       <script src="js/scriptCarga.js"></script>
-      <script src="js/global.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 
 
 <!-- programacion -->
@@ -192,6 +206,63 @@
 
 	<script type="text/javascript">
 	
+	//document.getElementById('fichero').innerHTML = document.getElementById('file-input').files[0].name;
+	
+	let nameCV = "";
+	let nameConsolidado = "";
+	
+	document.getElementById('idCV').addEventListener("change",function(e){
+	    let reader=new FileReader();
+	    reader.readAsDataURL(e.target.files[0]);	    
+	    nameCV = e.target.files[0].name	  
+	    
+	    document.getElementById('nombre_cv').innerHTML = nameCV
+	    
+	    
+	    let cadenainvertida = nameCV.split("").reverse().join("");
+	    let extension = cadenainvertida.split(".")[1];
+	    nameCV = extension.split("").reverse().join("");   
+	    
+	    
+	    
+	    reader.onload=function(){    
+	    	
+	            let filePDF = document.getElementById('idCV');	            
+	            filePDF.setAttribute("value",reader.result);
+	            
+	            filePDF.getAttribute("value");	            
+	        
+	            
+	            //document.getElementById('DOWNLOAD-PDF').setAttribute('href',reader.result)
+	            //document.getElementById('VISOR-PDF').setAttribute('src',reader.result)
+	    }
+	    
+	})
+	
+	
+	document.getElementById('idNotas').addEventListener("change",function(e){
+	    let reader=new FileReader();
+	    reader.readAsDataURL(e.target.files[0]);
+	    
+	    nameConsolidado = e.target.files[0].name	
+	    
+	    document.getElementById('nombre_consolidado').innerHTML = nameConsolidado
+	    
+	    let cadenainvertida = nameConsolidado.split("").reverse().join("");
+	    let extension = cadenainvertida.split(".")[1];
+	    nameConsolidado = extension.split("").reverse().join("");
+	    
+	    
+	    reader.onload=function(){    
+	    	
+	            let filePDF = document.getElementById('idNotas');	            
+	            filePDF.setAttribute("value",reader.result);
+	            
+	            //document.getElementById('DOWNLOAD-PDF').setAttribute('href',reader.result)
+	            //document.getElementById('VISOR-PDF').setAttribute('src',reader.result)
+	    }
+	    
+	})
 	
 	
 		$("#id_registrar").click(function() {
@@ -199,10 +270,31 @@
 			var validator = $('#id_postula').data('bootstrapValidator');
 			validator.validate();
 			
-			if(validator.isValid()){
+			if(validator.isValid()){	  
+			      
+				  var formData=new FormData();  
+				
+				  formData.append("nombre", $("#id_nombre").val());
+				  formData.append("telefono", $("#id_telefono").val());
+				  formData.append("dni", $("#id_dni").val());
+				  formData.append("email", $("#id_email").val());
+				  
+				  formData.append("cvPDF", $("#idCV").attr('value'));
+				  formData.append("consolidadoNotaPDF", $("#idNotas").attr('value'));	
+				  
+				  formData.append("nameCvPDF", nameCV);
+				  formData.append("nameConsolidadoNotaPDF", nameConsolidado);
+				 
+				  
+				
+				
 				$.ajax({
 					type : 'POST',
-					data : $("#id_postula").serialize(),
+					data: formData,
+				    // enctype: 'multipart/form-data',
+				    contentType: false,
+				    processData: false,
+				    cache: false,
 					url : 'registraPostulante',
 					success : function(data) {
 						mostrarMensaje(data.MENSAJE);
@@ -226,6 +318,15 @@
 			$("#id_telefono").val('');
 			$("#id_dni").val('');
 			$("#id_email").val('');
+			
+			
+			//------ archivos -------
+			$("#idCV").val('');
+			$("#idNotas").val('');	
+			
+			//--- NOMBRES ----
+			document.getElementById('nombre_cv').innerHTML = '';
+		    document.getElementById('nombre_consolidado').innerHTML = '';
 		}
 		
 /*validaciones de campos*/
@@ -297,6 +398,22 @@
 										},
 										emailAddress : {
 											message : 'El correo no es válido'
+										}
+									}
+								},
+								uploadCV : {
+									selector : '#idCV',
+									validators : {
+										notEmpty : {
+											message : 'Ingrese su CV'
+										}
+									}
+								},
+								uploadNotas : {
+									selector : '#idNotas',
+									validators : {
+										notEmpty : {
+											message : 'Ingrese su Consolidado de Notas'
 										}
 									}
 								},
